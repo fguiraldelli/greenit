@@ -95,12 +95,9 @@ div.breadcrumbs span
 	font-weight: bold;
 }
 div.rodape{
-    /*position: relative;
-    height: 63px;
-    background-color: pink;*/
     padding: 10px;
     margin: 10px 20px;
-    font-size: 0.6em;
+    font-size: 10px;
     text-align: center;
     border-top: 1px solid #C9E0ED;
 }

@@ -14,13 +14,16 @@
             <div class="conteudo">
                 <?php
                     switch ($_GET['r']){
-                        case "index":
-                            include("home.php");
+                        case "inicio":
+                            include("inicio.php");
                             break;
                         case "sobre":
                             include ("sobre.php");
                             break;
-                        default : header ("Location: index.php?r=index");
+                        case "tabela":
+                            include ("tabela.php");
+                            break;
+                        default : header ("Location: index.php?r=inicio");
                     }
                 ?>
             </div>
