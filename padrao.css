@@ -89,3 +89,16 @@ p{
     margin-top: 20px;
     font-size: 32px;
 }
+
+table{
+    width: 500px;
+    font-size: 12px;   
+}
+
+td{
+    width: 95px;
+}
+
+body.t{
+    font-size: 5px;
+}
