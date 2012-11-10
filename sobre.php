@@ -2,6 +2,11 @@
 <div class="breadcrumbs">
     <a href="index.php">Início</a> >> <span>Sobre</span>
 </div>
+<center>
+    <img class="logo" src="imgs/logo.png" />
+    <p class="titulo"> Green IT Consultoria</p>
+</center>
+
 
 <p>
     Nos últimos anos, a importância do desenvolvimento de sistemas sustentáveis 

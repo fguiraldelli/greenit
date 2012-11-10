@@ -32,6 +32,11 @@ div.titulo p{
     margin-top: 20px;
     font-size: 32px;
 }
+p.titulo{
+    margin-top: 20px;
+    font-size: 32px;
+    color: #9abf0f;
+}
 div.menu{
     /*margin-top: 1px;*/
     position: relative;
@@ -76,12 +81,12 @@ div.conteudo{
     background-color: whitesmoke;
     padding: 10px;
     margin: 10px 20px;
-    font-size: 1em;
+    font-size: 14px;
     text-align: justify;
 }
 div.breadcrumbs
 {
-	font-size: 0.6em;
+	font-size: 10px;
 	/*padding: 5px 20px;*/
 }
 
@@ -95,7 +100,7 @@ div.rodape{
     background-color: pink;*/
     padding: 10px;
     margin: 10px 20px;
-    font-size: 0.8em;
+    font-size: 0.6em;
     text-align: center;
     border-top: 1px solid #C9E0ED;
 }
@@ -103,4 +108,8 @@ div.rodape{
 img{
     height: 83px;
 }
-
+img.logo{
+    height: 112px;
+    width: 102px;
+    alignment-adjust: central;
+}
