@@ -1,5 +1,4 @@
 <?php ?>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="padrao.css">
@@ -7,12 +6,7 @@
     <body>
         <div class="geral">
             <div class="cabecalho">
-                <div class="logo">
-                    <img class="logo" src="imgs/logo.jpg" />
-                </div>
-                <div class="titulo">
-                    Green IT UFSCar
-                </div>
+                <?php include("cabecalho.php");  ?>
             </div>
             <div class="menu">
                 MENUZINHO
@@ -21,7 +15,7 @@
                 CONTEUDO
             </div>
             <div class="rodape">
-                <?php //include("rodape.php");  ?>
+                <?php include("rodape.php");  ?>
             </div>
         </div
     </body>
