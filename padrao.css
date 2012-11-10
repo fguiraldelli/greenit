@@ -1,3 +1,7 @@
+body{
+	color: white;
+        background-color: darkgreen;
+}
 div.geral{
 	position: relative;
 	width: 760px;
@@ -10,20 +14,19 @@ div.geral{
 div.cabecalho{
     position: relative;
     height: 83px;
-    background-color: red; 
+    background-color: whitesmoke; 
 }
 div.logo{
 	position: absolute;
 	height: 83px;
 	width: 85px;
-	background-color: red;
 }
 div.titulo{
     	position: absolute;
         margin-left: 85px;
 	height: 83px;
         width: 600px;
-	background-color: darkgoldenrod;
+        color: #9abf0f;
 }
 div.menu{
 	position: relative;
@@ -45,7 +48,4 @@ img{
 }
 p{
 	padding-top: 30px;
-}
-body{
-	color: white;
 }
