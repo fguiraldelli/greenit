@@ -1,15 +1,15 @@
 body{
-	color: white;
-        background-color: darkgreen;
+    color: white;
+    background-color: darkgreen;
 }
 div.geral{
-	position: relative;
-	width: 760px;
-	height: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: verdana;
-	background-color: blue;
+    position: relative;
+    width: 760px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: verdana;
+    background-color: blue;
 }
 div.cabecalho{
     position: relative;
@@ -17,35 +17,38 @@ div.cabecalho{
     background-color: whitesmoke; 
 }
 div.logo{
-	position: absolute;
-	height: 83px;
-	width: 85px;
+    position: absolute;
+    height: 83px;
+    width: 85px;
 }
 div.titulo{
-    	position: absolute;
-        margin-left: 85px;
-	height: 83px;
-        width: 600px;
-        color: #9abf0f;
+    position: absolute;
+    margin-left: 85px;
+    height: 83px;
+    width: 600px;
+    color: #9abf0f;
 }
 div.menu{
-	position: relative;
-	height: 27px;
-	background-color: lightgreen;
+    margin-top: 1px;
+    position: relative;
+    height: 27px;
+    background-color: whitesmoke;
 }
 div.conteudo{
-	position: relative;
-	background-color: lightblue;
+    margin-top: 1px;
+    position: relative;
+    background-color: lightblue;
 }
 div.rodape{
-	position: relative;
-	height: 63px;
-	background-color: pink;
+    position: relative;
+    height: 63px;
+    background-color: pink;
 }
 
 img{
-	height: 83px;
+    height: 83px;
 }
 p{
-	padding-top: 30px;
+    margin-top: 20px;
+    font-size: 32px;
 }

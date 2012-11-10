@@ -1,6 +1,6 @@
 <div class="logo">
-    <img class="logo" src="imgs/logo.jpg" />
+    <img class="logo" src="imgs/logo.png" />
 </div>
 <div class="titulo">
-    Green IT UFSCar
+    <p class="titulo"> Green IT UFSCar</p>
 </div>
