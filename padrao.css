@@ -1,15 +1,15 @@
 body{
-    color: white;
+    color: darkgreen;
     background-color: darkgreen;
 }
 div.geral{
     position: relative;
     width: 760px;
-    height: 500px;
+    /*height: 500px;*/
     margin-left: auto;
     margin-right: auto;
     font-family: verdana;
-    background-color: blue;
+    background-color: whitesmoke;
 }
 div.cabecalho{
     position: relative;
@@ -29,20 +29,57 @@ div.titulo{
     color: #9abf0f;
 }
 div.menu{
-    margin-top: 1px;
+    /*margin-top: 1px;*/
     position: relative;
     height: 27px;
     background-color: whitesmoke;
+    background:white url(imgs/bg2.gif) repeat-x left top;
 }
+div.menu ul
+{
+    padding:6px 20px 5px 20px;
+    margin:0px;
+}
+
+div.menu ul li
+{
+    display: inline;
+}
+
+div.menu ul li a
+{
+    color:#ffffff;
+    background-color:transparent;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:5px 8px;
+}
+
+div.menu ul li a:hover, div.menu ul li.active a
+{
+    color: #137B2D;
+    background-color:#C5FAD7;
+    /*color: #6399cd;
+    background-color:#EFF4FA;*/
+    text-decoration:none;
+}
+
+
 div.conteudo{
-    margin-top: 1px;
+    /*margin-top: 1px;*/
     position: relative;
     background-color: lightblue;
 }
 div.rodape{
-    position: relative;
+    /*position: relative;
     height: 63px;
-    background-color: pink;
+    background-color: pink;*/
+    padding: 10px;
+    margin: 10px 20px;
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid #C9E0ED;
 }
 
 img{
