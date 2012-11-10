@@ -28,6 +28,10 @@ div.titulo{
     width: 600px;
     color: #9abf0f;
 }
+div.titulo p{
+    margin-top: 20px;
+    font-size: 32px;
+}
 div.menu{
     /*margin-top: 1px;*/
     position: relative;
@@ -69,7 +73,21 @@ div.menu ul li a:hover, div.menu ul li.active a
 div.conteudo{
     /*margin-top: 1px;*/
     position: relative;
-    background-color: lightblue;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px 20px;
+    font-size: 1em;
+    text-align: justify;
+}
+div.breadcrumbs
+{
+	font-size: 0.6em;
+	/*padding: 5px 20px;*/
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
 }
 div.rodape{
     /*position: relative;
@@ -85,7 +103,4 @@ div.rodape{
 img{
     height: 83px;
 }
-p{
-    margin-top: 20px;
-    font-size: 32px;
-}
+
