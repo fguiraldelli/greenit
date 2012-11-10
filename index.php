@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php ?>
 
 <html>
@@ -27,17 +26,3 @@
         </div
     </body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
->>>>>>> fdf5a11b4d322c3a987995150f3532a9fffc06f5
