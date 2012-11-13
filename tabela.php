@@ -6,7 +6,6 @@ echo "
         <link rel=\"stylesheet\" type=\"text/css\" href=\"padrao.css\">
 </head>
 <body class=\"t\">
-<div class=\"geral\">
     <table border=1 width=400>
         <tr>
             <td>
@@ -167,7 +166,6 @@ echo "
             </td>
         </tr>
     </table>
-    </div>
     </body>
     ";
 ?>
