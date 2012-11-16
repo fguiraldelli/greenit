@@ -127,11 +127,29 @@ td{
 
     height: 55px;
     border: 1px solid green;
-    text-align: center;
-    
-    
+    text-align: center;    
 }
-
+td.s1{
+    background-color: #006600;/*verde escuro*/
+}
+td.s2{
+    background-color: #00FF00;/*verde claro*/
+}
+td.s3{
+    background-color: #FFFF00;/*amarelo*/
+}
+td.s4{
+    background-color: #FFFFFF;/*branco*/
+}
+td.s5{
+    background-color: #FF6600;/*laranja*/
+}
+td.s6{
+    background-color: #FF0000;/*vermelho*/
+}
+td.s7{
+    background-color: #660000;/*vermelho escuro*/
+}
 body.t{
     font-size: 5px;
 }
