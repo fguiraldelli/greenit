@@ -7,6 +7,6 @@
         <a href="index.php?r=contato">Contato</a></li>
     <li <?php if ($_GET['r'] == 'login') echo "class=\"active\""?> >
         <a href="index.php?r=login">Entrar</a></li>
-    <li <?php if ($_GET['r'] == 'login') echo "class=\"active\""?> >
+    <li <?php if ($_GET['r'] == 'tabela') echo "class=\"active\""?> >
         <a href="index.php?r=tabela">Tabela</a></li>
 </ul>
