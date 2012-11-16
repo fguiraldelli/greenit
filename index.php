@@ -27,6 +27,9 @@
                         case "cadastro":
                             include ("cadastro.php");
                             break;
+                        case "login":
+                            include("login.php");
+                            break;
                         default : header ("Location: index.php?r=inicio");
                     }
                 ?>
