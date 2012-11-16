@@ -120,12 +120,9 @@ table.resultado{
     border-collapse: collapse;
     table-layout: fixed;
 }
-table.cadastro{
+label.cadastro{
     width: 630px;
-    font-size: 10px;
-    border: 0px;
-    border-collapse: collapse;
-    table-layout: auto;
+    font-size: 11px;
 }
 th{
     border: 1px solid green;
