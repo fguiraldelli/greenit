@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="padrao.css">
+        <script src="javascript.js"></script>
     </head>
     <body>
         <div class="geral">
@@ -22,6 +23,9 @@
                             break;
                         case "tabela":
                             include ("tabela.php");
+                            break;
+                        case "cadastro":
+                            include ("cadastro.php");
                             break;
                         default : header ("Location: index.php?r=inicio");
                     }

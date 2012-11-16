@@ -9,4 +9,6 @@
         <a href="index.php?r=login">Entrar</a></li>
     <li <?php if ($_GET['r'] == 'tabela') echo "class=\"active\""?> >
         <a href="index.php?r=tabela">Tabela</a></li>
+    <li <?php if ($_GET['r'] == 'cadastro') echo "class=\"active\""?> >
+        <a href="index.php?r=cadastro">Cadastro</a></li>
 </ul>

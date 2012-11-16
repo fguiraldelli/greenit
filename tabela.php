@@ -4,18 +4,18 @@ include("connection.php");
 //$sql = "SELECT * FROM questoes where id = " . $cont;
 $sql = "SELECT * FROM questoes";
 $result = mysql_query($sql);
-echo "<table>";
-echo "<tr><td></td>";
+echo "<table class = resultado>";
+echo "<tr><td class=s0></td>";
 $linhas = mysql_num_rows($result);
 $i = $linhas / 2;
 while ($i < $linhas) {
-    echo "<td>" . mysql_result($result, $i, 1) . "</td>";
+    echo "<td class=s0>" . mysql_result($result, $i, 1) . "</td>";
     $i++;
 }
 echo "</tr>";
 $i = 0;
 while ($i < $linhas / 2) {
-    echo "<tr><td>" . mysql_result($result, $i, 1) . "</td>";
+    echo "<tr><td class=s0>" . mysql_result($result, $i, 1) . "</td>";
     for ($j = 0; $j < $linhas / 2; $j++) {
         switch ($j){
                         case 0:
