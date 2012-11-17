@@ -16,7 +16,7 @@
     <input name="repsenha" type="password" id="repsenha" maxlength="12" onkeyup="matchSenha(this.id,this.value)"/>
     <br>
     <p>
-        <input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar" /> 
+        <input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar" onclick="return validaForm();" /> 
 
 
         <input name="limpar" type="reset" id="limpar" value="Limpar" />

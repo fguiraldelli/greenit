@@ -5,34 +5,37 @@ function verifica(id,string,regex){
     if(string != null && string != ""){
         if(regex.test(string)){
             document.getElementById(id).style.color = "green";
+            return true;
         }else{
             document.getElementById(id).style.color = "red";
+            return false;
         }
     }   
-
 }
+
 
 function validaNome(id,nome){
     
     var regex = /^[a-zA-Z- ]+$/;
-    verifica(id,nome,regex);
+    return verifica(id,nome,regex);
+
 }
 
 
 function validaEmpresa(id,nome){
     
     var regex = /^[a-zA-Z-0-9- ]+$/;
-    verifica(id,nome,regex);
+    return verifica(id,nome,regex);
 }
 
 function validaEmail(id,email){
     var regex  = /^[\w-]+(\.[\w-]+)*@(([\w-]{2,63}\.)+[A-Za-z]{2,6}|\[\d{1,3}(\.\d{1,3}){3}\])$/;
-    verifica(id,email,regex);
+    return verifica(id,email,regex);
 }
 
 function validaSenha(id,senha){
     var regex = /^.{7,10}$/;
-    verifica(id,senha,regex);
+    return verifica(id,senha,regex);
 }
 
 function matchSenha(id,match){
@@ -41,9 +44,41 @@ function matchSenha(id,match){
 
     if (senha == match){
         document.getElementById(id).style.color = "green";
+        return true;
     }else{
         document.getElementById(id).style.color = "red";
+        return false;
     }
     
 }
 
+
+function validaForm(){
+  if (!validaNome("nome",document.getElementById("nome").value)) {
+    alert("Preencha o nome corretamente");
+    return false;
+  }
+  if (!validaEmpresa("empresa",document.getElementById("empresa").value)) {
+    alert("Preencha o nome da empresa corretamente");
+    return false;
+  }
+
+
+  if(!validaEmail("email", document.getElementById("email").value)){
+    alert("Preencha o email corretamente");
+    return false;
+  }
+
+  if(!validaSenha("senha", document.getElementById("senha").value)){
+    alert("Preencha uma senha de 7 a 10 caracteres");
+    return false;
+  }
+
+  if(!matchSenha("repsenha", document.getElementById("repsenha").value)){
+    alert("Confira se as senhas combinam");
+    return false;
+  }
+
+  return true;
+
+}
