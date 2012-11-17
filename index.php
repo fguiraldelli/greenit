@@ -33,6 +33,9 @@
                         case "validaLogin":
                             include("validaLogin.php");
                             break;
+                        case "contato":
+                            include("contato.php");
+                            break;
                         default : header ("Location: index.php?r=inicio");
                     }
                 ?>
