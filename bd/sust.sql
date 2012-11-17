@@ -32,6 +32,14 @@ CREATE TABLE IF NOT EXISTS `questoes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `empresa` varchar(100) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 --
 -- Extraindo dados da tabela `questoes`
 --
@@ -52,6 +60,8 @@ INSERT INTO `questoes` (`id`, `questao`) VALUES
 (13, 'Resposta a necessidades e desafios críticos locais e regionais'),
 (14, 'Aderência a objetivos e metas de desenvolvimento sustentável(ODM)');
 
+INSERT INTO `usuario` (`id`, `nome`, `empresa`, `email`, `senha`) VALUES
+(1, 'admin', 'greenitconsultoria', 'admin@greenitconsultoria.com', md5('admin');
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
