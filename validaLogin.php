@@ -2,12 +2,13 @@
 include("connection.php");
 
 $usuario = $_POST["usuario"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 
 if ($usuario != "" && $senha != "") {
-	$res = mysql_query("SELECT * FROM clientes
-            WHERE email='$usuario' AND senha='$senha'", $bd);
-	if ($res != NULL) {
+        $sql = "SELECT * FROM usuario WHERE email='$usuario' AND senha='$senha'";
+	$res = mysql_query($sql);
+        $linhas = mysql_num_rows($res);
+	if ($linhas == 1) {
             echo "Login efetuado com sucesso.";
 	}
 	else {
