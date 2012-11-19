@@ -1,19 +1,20 @@
 <?php
 
 include("connection.php");
-//$sql = "SELECT * FROM questoes where id = " . $cont;
 $sql = "SELECT * FROM questoes";
 $result = mysql_query($sql);
 echo "<table class = resultado>";
 echo "<tr><td class=s0></td>";
 $linhas = mysql_num_rows($result);
 $i = 0;
+/*Imprime as perguntas da coluna*/
 while ($i < $linhas/2) {
     echo "<td class=s0>" . mysql_result($result, $i, 1) . "</td>";
     $i++;
 }
 echo "</tr>";
 $i = $linhas / 2;
+/*Imprime as perguntas da linha e colore a célula da tabela*/
 while ($i < $linhas) {
     echo "<tr><td class=s0>" . mysql_result($result, $i, 1) . "</td>";
     for ($j = 0; $j < $linhas/2; $j++) {
