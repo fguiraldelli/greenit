@@ -42,6 +42,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`), 
   UNIQUE (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
+
+ CREATE TABLE IF NOT EXISTS respostas(
+  idu INT NOT NULL,
+  idq INT NOT NULL,
+  resp INT NOT NULL,
+  data DATE NOT NULL,
+  
+  FOREIGN KEY (idu) REFERENCES usuario (id),
+  FOREIGN KEY (idq) REFERENCES questoes (id)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
 --
 -- Extraindo dados da tabela `questoes`
 --
