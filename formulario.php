@@ -18,9 +18,9 @@ while($row = mysql_fetch_array($res)){
     while($rowresp = mysql_fetch_array($resresp)){
         echo "<input type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . 
                 $rowresp['resp'] . "\"";
-        if(){
+       /* if(){
             
-        }
+        }*/
         echo "/>" . $rowresp['rotulo'];
     }
 
