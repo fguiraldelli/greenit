@@ -5,39 +5,43 @@
         <script src="javascript.js"></script>
     </head>
     <body>
+        
         <div class="geral">
             <div class="cabecalho">
                 <?php include("cabecalho.php"); ?>
             </div>
             <div class="menu">
-                <?php include("menu.php"); ?>
+                <?php include("menu.php");?>
             </div>
             <div class="conteudo">
                 <?php
-                    switch ($_GET['r']){
-                        case "inicio":
-                            include("inicio.php");
-                            break;
-                        case "sobre":
-                            include ("sobre.php");
-                            break;
-                        case "tabela":
-                            include ("tabela.php");
-                            break;
-                        case "cadastro":
-                            include ("cadastro.php");
-                            break;
-                        case "login":
-                            include("login.php");
-                            break;
-                        case "validaLogin":
-                            include("validaLogin.php");
-                            break;
-                        case "contato":
-                            include("contato.php");
-                            break;
-                        default : header ("Location: index.php?r=inicio");
-                    }
+                switch ($_GET['r']) {
+                    case "inicio":
+                        include("inicio.php");
+                        break;
+                    case "sobre":
+                        include ("sobre.php");
+                        break;
+                    case "tabela":
+                        include ("tabela.php");
+                        break;
+                    case "cadastro":
+                        include ("cadastro.php");
+                        break;
+                    case "login":
+                        include("login.php");
+                        break;
+                    case "validaLogin":
+                        include("validaLogin.php");
+                        break;
+                    case "form":
+                        include("formulario.php");
+                        break;
+                    case "contato":
+                        include("contato.php");
+                        break;
+                    default : header("Location: index.php?r=inicio");
+                }
                 ?>
             </div>
             <div class="rodape">

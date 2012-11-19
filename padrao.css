@@ -46,6 +46,7 @@ div.menu{
 }
 div.menu ul
 {
+    /*width: 500px;*/
     padding:6px 20px 5px 20px;
     margin:0px;
 }
@@ -54,7 +55,13 @@ div.menu ul li
 {
     display: inline;
 }
-
+div.menu a.menu
+{
+    width: 100px;
+    padding-left: 188px;
+    font-size: 12px;
+     
+}
 div.menu ul li a
 {
     color:#ffffff;

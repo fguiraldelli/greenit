@@ -1,5 +1,5 @@
 <?php
-
+include ("sessao.php");
 include("connection.php");
 $sql = "SELECT * FROM questoes";
 $result = mysql_query($sql);
