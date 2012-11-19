@@ -1,3 +1,7 @@
+<div class="breadcrumbs">
+    <a href="index.php">Início</a> >> <span>Entrar  </span>
+</div>
+
 <h3>Informe seu nome de usuário e senha para acessar o sistema</h3>
 <form method="post" action="index.php?r=validaLogin">
 <label class="cadastro">Usuário <span class="style1">*</span></label><br>

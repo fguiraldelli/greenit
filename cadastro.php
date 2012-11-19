@@ -1,3 +1,7 @@
+<div class="breadcrumbs">
+    <a href="index.php">Início</a> >> <span>Cadastro</span>
+</div>
+
 <form  name="cadastro" method="post" action="controleCadastro.php">
       <!--<td class="cadastro">Nome:</td>-->
     <label class="cadastro">Nome <span class="style1">*</span></label><br>
