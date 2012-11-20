@@ -68,6 +68,7 @@
                           } */
                         echo "/>" . $rowresp['rotulo'];
                         echo "<input type=hidden name=\"q\" value=" . $q . " />";
+                        echo "<input type=hidden name=\"op\" value=" . $q . " />";
                     }
                 }
                 ?>
@@ -79,13 +80,13 @@
                     <tr>
                         <td>
                             <?php if ($q > 1) { ?>
-                                <input class ="button"name="back" type="submit" id="form" value="<< Anterior" onclick="return validaForm();"/>
+                                <input class ="button"name="back" type="button" id="form" value="<< Anterior" onclick="return validaForm('a');"/>
                             <?php } ?>
                         </td>
                         <td class="button"> </td>
                         <td>
                             <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
-                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "<?php echo $botao;?>" onclick = "return validaForm();" />
+                            <input class = "button_prox"name = "next" type = "button" id = "form" value = "<?php echo $botao;?>" onclick = "return validaForm('p');" />
                         </td>
                     </tr>
                 </table>

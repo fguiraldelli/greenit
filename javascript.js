@@ -53,32 +53,33 @@ function matchSenha(id,match){
 }
 
 
-function validaForm(){
-  if (!validaNome("nome",document.getElementById("nome").value)) {
-    alert("Preencha o nome corretamente");
-    return false;
-  }
-  if (!validaEmpresa("empresa",document.getElementById("empresa").value)) {
-    alert("Preencha o nome da empresa corretamente");
-    return false;
-  }
+function validaForm(op){
+    if (!validaNome("nome",document.getElementById("nome").value)) {
+        alert("Preencha o nome corretamente");
+        return false;
+    }
+    if (!validaEmpresa("empresa",document.getElementById("empresa").value)) {
+        alert("Preencha o nome da empresa corretamente");
+        return false;
+    }
 
 
-  if(!validaEmail("email", document.getElementById("email").value)){
-    alert("Preencha o email corretamente");
-    return false;
-  }
+    if(!validaEmail("email", document.getElementById("email").value)){
+        alert("Preencha o email corretamente");
+        return false;
+    }
 
-  if(!validaSenha("senha", document.getElementById("senha").value)){
-    alert("Preencha uma senha de 7 a 10 caracteres");
-    return false;
-  }
+    if(!validaSenha("senha", document.getElementById("senha").value)){
+        alert("Preencha uma senha de 7 a 10 caracteres");
+        return false;
+    }
 
-  if(!matchSenha("repsenha", document.getElementById("repsenha").value)){
-    alert("Confira se as senhas combinam");
-    return false;
-  }
+    if(!matchSenha("repsenha", document.getElementById("repsenha").value)){
+        alert("Confira se as senhas combinam");
+        return false;
+    }
 
-  return true;
+    document.getElementById("op").value = op;
+    return true;
 
 }
