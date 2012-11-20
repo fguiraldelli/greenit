@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $just = $_POST["just"];
     
     $data = date("Y-m-d");
-    echo $data;
     
     $sql = "SELECT * FROM respostas WHERE idu=" . $idu .
         " AND idq=" . $q . " AND data=" . $data;
@@ -21,6 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "INSERT INTO respostas (idu, idq, resp, just, data) VALUES " . 
             "(" . $idu . ", " . $q . ", " . $resp . ", " . $just . ", '" . $data . "')";
     }
-    echo $sql;
+    $resResp = mysql_query($sql);
+
+    $pag = $q + 1;
+    $url = "Location: formulario.php?q=". $pag;
+    echo $url;
+    if($q < 14)
+        header($url);
 }
 ?>
