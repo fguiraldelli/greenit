@@ -1,6 +1,6 @@
 <?php
 
-//include("sessao.php");
+include("sessao.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $idu = $_SESSION["idu"];

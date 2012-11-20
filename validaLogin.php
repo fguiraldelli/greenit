@@ -10,6 +10,7 @@ if ($usuario != "" && $senha != "") {
     $res = mysql_query($sql);
     $campoUser = mysql_fetch_array($res);
     print "Bem Vindo, " . $campoUser["nome"] . "<br>";
+    print "Seu id é, " . $campoUser["id"] . "<br>";
     $linhas = mysql_num_rows($res);
     if ($linhas == 1) {
         //inicia a sessao
@@ -21,6 +22,7 @@ if ($usuario != "" && $senha != "") {
         $_SESSION["AUTH"] = true;
         $_SESSION["usuario"] = $campoUser["nome"];
         $_SESSION["TIME"] = time();
+        $_SESSION["idu"] = $campoUser["id"];
     } else {
         echo "<font color=red><b>Erro: Usuário e/ou senha incorretos.</b></font><br />";
         //se o usuario nao for encontrado, nao autentica

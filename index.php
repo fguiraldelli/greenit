@@ -17,15 +17,15 @@
                 <?php
                 session_start();
                 //print $campoUser["nome"];
-                /*if ($_SESSION["AUTH"] == true) {
+                if ($_SESSION["AUTH"] == true) {
                     echo $_SESSION["usuario"] . " ";
                     //echo time() - $_SESSION['TIME'];
                     echo " ," . " " . "<a href = " . "logout.php" . " >SAIR</a>";
-                }*/
-                /*if (time() - $_SESSION['TIME'] > 1800) {
+                }
+                if (time() - $_SESSION['TIME'] > 1800) {
                     session_destroy();
                     session_unset();
-                }*/
+                }
                 ?>
 
             </div>
