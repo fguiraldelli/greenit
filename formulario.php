@@ -55,12 +55,13 @@
 
                           } */
                         echo "/>" . $rowresp['rotulo'];
+                        echo "<input type=hidden name=\"q\" value=" . $q . " />";
                     }
                 }
                 ?>
                 <p>
                     <label class="cadastro">Se quiser justifique abaixo a sua resposta:</label><br>
-                    <textarea name="mensagem" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
+                    <textarea name="j" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
                 </p>
                 <p><table >
                     <tr>
