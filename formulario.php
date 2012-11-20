@@ -81,11 +81,8 @@
                         </td>
                         <td class="button"> </td>
                         <td>
-                            <?php if ($q != $MAX[0]){?>
-                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "Próxima >>" onclick = "return validaForm();" />
-                            <?php } else{?>
-                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "Finaliza" onclick = "return validaForm();" />
-                            <?php } ?>
+                            <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
+                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "<?php echo $botao;?>" onclick = "return validaForm();" />
                         </td>
                     </tr>
                 </table>
