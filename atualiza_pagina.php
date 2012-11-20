@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $res = mysql_query($sql);
     if($res){
         $sql = "UPDATE respostas SET resp = " . $resp . ", just = " . $just . 
-                " WHERE idu=" . $idu . " AND idq=" . $q . " AND data=" . $data;
+                " WHERE idu=" . $idu . " AND idq=" . $q . " AND data='" . $data . "'";
     }else{
         $sql = "INSERT INTO respostas (idu, idq, resp, just, data) VALUES " . 
-            "(" . $idu . ", " . $q . ", " . $resp . ", " . $just . ", " . $data . ")";
+            "(" . $idu . ", " . $q . ", " . $resp . ", " . $just . ", '" . $data . "')";
     }
     echo $sql;
 }

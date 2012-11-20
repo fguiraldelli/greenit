@@ -54,7 +54,9 @@
 
 
                     echo /* $row['id'] . " " . */$row['questao'] . "<br>" . "<p>";
-
+                    
+                    /* Abre o formulario */
+                    echo "<form action=\"atualiza_pagina.php\" method=\"POST\">";
                     /* Recupera as possiveis respostas */
                     $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
                     $resresp = mysql_query($sql);
@@ -71,7 +73,7 @@
                 ?>
                 <p>
                     <label class="cadastro">Se quiser justifique abaixo a sua resposta:</label><br>
-                    <textarea name="j" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
+                    <textarea name="just" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
                 </p>
                 <p><table >
                     <tr>

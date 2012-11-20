@@ -20,7 +20,6 @@ if ($usuario != "" && $senha != "") {
         //coloca na sessao o codigo e o nome de usuario
         $_SESSION["AUTH"] = true;
         $_SESSION["usuario"] = $campoUser["nome"];
-        $_SESSION["idu"] = $campoUser["id"];
         $_SESSION["TIME"] = time();
     } else {
         echo "<font color=red><b>Erro: Usuário e/ou senha incorretos.</b></font><br />";
