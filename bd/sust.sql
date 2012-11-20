@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   idu INT NOT NULL,
   idq INT NOT NULL,
   resp INT NOT NULL,
+  just TEXT, 
   data DATE NOT NULL,
   
   FOREIGN KEY (idu) REFERENCES usuario (id),
