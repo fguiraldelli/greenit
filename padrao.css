@@ -216,47 +216,77 @@ td.s0{
     border: 1px solid green;
     text-align: center;    
 }
-td.s1{
+td.s-10{
     height: 55px;
     border: 1px solid green;
     text-align: center;  
-    background-color: #006600;/*verde escuro*/
+    background-color: #FF6600;/*laranja*/
 }
-td.s2{
+td.s-11{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;  
+    background-color: #FF0000;/*vermelho*/
+}
+td.s-12{
     height: 55px;
     border: 1px solid green;
     text-align: center;
-    background-color: #00FF00;/*verde claro*/
+    background-color: #660000;/*vermelho escuro*/
 }
-td.s3{
-    height: 55px;
-    border: 1px solid green;
-    text-align: center;
-    background-color: #FFFF00;/*amarelo*/
-}
-td.s4{
+td.s00{
     height: 55px;
     border: 1px solid green;
     text-align: center;
     background-color: #FFFFFF;/*branco*/
 }
-td.s5{
+td.s01{
     height: 55px;
     border: 1px solid green;
     text-align: center;
-    background-color: #FF6600;/*laranja*/
+    background-color: #FFFFFF;/*branco*/
 }
-td.s6{
+td.s02{
     height: 55px;
     border: 1px solid green;
     text-align: center;
-    background-color: #FF0000;/*vermelho*/
+    background-color: #FFFFFF;/*branco*/
 }
-td.s7{
+td.s10{
     height: 55px;
     border: 1px solid green;
     text-align: center;
-    background-color: #660000;/*vermelho escuro*/
+    background-color: #FFFFFF;/*branco*/
+}
+td.s11{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;
+    background-color: #FFFF00;/*amarelo*/
+}
+td.s12{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;
+    background-color: #00FF00;/*vermelho claro*/
+}
+td.s20{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;
+    background-color: #FFFFFF;/*branco*/
+}
+td.s21{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;
+    background-color: #00FF00;/*vermelho claro*/
+}
+td.s22{
+    height: 55px;
+    border: 1px solid green;
+    text-align: center;
+    background-color: #006600;/*verde escuro*/
 }
 body.t{
     font-size: 5px;
