@@ -6,8 +6,8 @@ $senha= md5($_POST["senha"]);
 
 include("connection.php");
 //Query que realiza a inserção dos dados no banco de dados na tabela indicada acima
-$query = "INSERT INTO `clientes` ( `nome` , `empresa` , `email` , `senha`) 
-VALUES ('$nome', '$empresa', '$email', '$senha', '')";
+$query = "INSERT INTO `usuario` ( `nome` , `empresa` , `email` , `senha`) 
+    VALUES ('"."$nome".".', "."'$empresa'".","."'$email'".", "."'$senha'".")";
 mysql_query($query);
 
 echo "Seu cadastro foi realizado com sucesso! Agradecemos a atenção";
