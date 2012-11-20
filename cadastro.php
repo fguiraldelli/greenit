@@ -2,7 +2,7 @@
     <a href="index.php">Início</a> >> <span>Cadastro</span>
 </div>
 
-<form  name="cadastro" method="post" action="controleCadastro.php">
+<form  name="cadastro" method="post" action="index.php?r=concad">
       <!--<td class="cadastro">Nome:</td>-->
     <label class="cadastro">Nome <span class="style1">*</span></label><br>
     <input name="nome" type="text" id="nome" size="70" maxlength="60" onkeyup="validaNome(this.id,this.value)"/>

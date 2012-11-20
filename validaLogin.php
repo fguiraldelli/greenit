@@ -13,11 +13,14 @@ if ($usuario != "" && $senha != "") {
     $linhas = mysql_num_rows($res);
     if ($linhas == 1) {
         //inicia a sessao
+        session_set_cookie_params(0);
         session_start();
-        echo "Login efetuado com sucesso.";
+        echo "Login efetuado com sucesso.<br>";
+        echo "<a href="."index.php?r=inicio".">Voltar</a>";
         //coloca na sessao o codigo e o nome de usuario
         $_SESSION["AUTH"] = true;
         $_SESSION["usuario"] = $campoUser["nome"];
+        $_SESSION["TIME"] = time();
     } else {
         echo "<font color=red><b>Erro: Usuário e/ou senha incorretos.</b></font><br />";
         //se o usuario nao for encontrado, nao autentica
