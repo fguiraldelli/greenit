@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     //echo $url;
     $op = $_POST['op'];
-    if (op == 'a') {
+    if ($op == 'a') {
         if ($q > 1) {
             $pag = $q - 1;
         }
