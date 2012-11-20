@@ -110,6 +110,32 @@ div.conteudo{
     font-size: 14px;
     text-align: justify;
 }
+div.conteudo-form{
+    /*margin-top: 1px;*/
+    position: relative;
+    background-color: whitesmoke;
+    padding: 10px;
+    /*margin: 10px 20px;*/  
+    font-size: 14px;
+    text-align: center;
+}
+div.conteudo-form input.radio
+{
+    width: 30px;
+}
+
+div.conteudo-form input.button
+{
+    width: auto;
+}
+div.conteudo-form table
+{
+    margin: auto;
+}
+div.conteudo-form table td.button
+{
+    width: 150px;
+}
 div.breadcrumbs
 {
 	font-size: 10px;

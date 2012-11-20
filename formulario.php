@@ -30,7 +30,7 @@
                 ?>
 
             </div>
-            <div class="conteudo">
+            <div class="conteudo-form">
                 <?php
                 include("connection.php");
 
@@ -43,13 +43,13 @@
                 $cont = 0;
                 while ($row = mysql_fetch_array($res)) {
                     $cont++;
-                    echo $row['id'] . " " . $row['questao'] . "<br>";
+                    echo $row['id'] . " " . $row['questao'] . "<br>" . "<p>";
 
                     /* Recupera as possiveis respostas */
                     $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
                     $resresp = mysql_query($sql);
                     while ($rowresp = mysql_fetch_array($resresp)) {
-                        echo "<input type=\"radio\" name=\"" . $row['id'] . "\" value=\"" .
+                        echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" .
                         $rowresp['resp'] . "\"";
                         /* if(){
 
@@ -58,6 +58,23 @@
                     }
                 }
                 ?>
+                <p>
+                    <label class="cadastro">Se quiser justifique abaixo a sua resposta:</label><br>
+                    <textarea name="mensagem" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
+                </p>
+                <p><table >
+                    <tr>
+                        <td>
+                            <input class ="button"name="back" type="submit" id="form" value="Anterior" onclick="return validaForm();"/>
+                        </td>
+                        <td class="button"> </td>
+                        <td>
+                            <input style="font-style: "class ="button"name="next" type="submit" id="form" value="Próxima" onclick="return validaForm();" />
+                        </td>
+                    </tr>
+                </table>
+
+
             </div>
             <div class="rodape">
                 <?php include("rodape.php"); ?>
