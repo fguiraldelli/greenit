@@ -31,6 +31,9 @@
 
             </div>
             <div class="conteudo-form">
+                <div class="breadcrumbs-form">
+                    <a href="index.php">Início</a> >> <span>Formulário</span>
+                </div>
                 <?php
                 include("connection.php");
 
@@ -39,11 +42,18 @@
                 if (($q == NULL) || ($q < 1) || ($q > 14))
                     header("location: formulario.php?q=1");
                 $sql = "SELECT * FROM questoes where id = " . $q;
+                $num_question = "SELECT count(*) FROM questoes";
+                $resMAX = mysql_query($num_question);
+                $MAX = mysql_fetch_array($resMAX);
                 $res = mysql_query($sql);
                 $cont = 0;
                 while ($row = mysql_fetch_array($res)) {
                     $cont++;
-                    echo $row['id'] . " " . $row['questao'] . "<br>" . "<p>";
+                    echo "<div class = \"question-form\"><p>Questão " .
+                    $q . " de " . $MAX[0] . "</p></div>";
+
+
+                    echo /* $row['id'] . " " . */$row['questao'] . "<br>" . "<p>";
 
                     /* Recupera as possiveis respostas */
                     $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
@@ -65,11 +75,17 @@
                 <p><table >
                     <tr>
                         <td>
-                            <input class ="button"name="back" type="submit" id="form" value="Anterior" onclick="return validaForm();"/>
+                            <?php if ($q > 1) { ?>
+                                <input class ="button"name="back" type="submit" id="form" value="<< Anterior" onclick="return validaForm();"/>
+                            <?php } ?>
                         </td>
                         <td class="button"> </td>
                         <td>
-                            <input style="font-style: "class ="button"name="next" type="submit" id="form" value="Próxima" onclick="return validaForm();" />
+                            <?php if ($q != $MAX[0]){?>
+                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "Próxima >>" onclick = "return validaForm();" />
+                            <?php } else{?>
+                            <input class = "button_prox"name = "next" type = "submit" id = "form" value = "Finaliza" onclick = "return validaForm();" />
+                            <?php } ?>
                         </td>
                     </tr>
                 </table>
