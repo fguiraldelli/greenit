@@ -1,7 +1,9 @@
 <center>
     <img class="logo" src="imgs/logo.png" />
-    <p class="titulo"> Bem Vindo a:</p>
-    <p class="titulo"> Green IT Consultoria</p>
+    <p class="titulo"> 
+        Seja Bem Vindo a<br>
+        Green IT Consultoria
+    </p>
 </center>
 
 
