@@ -39,8 +39,10 @@
 
                 $q = $_GET['q'];
                 /* Recupera a questao */
-                if (($q == NULL) || ($q < 1) || ($q > 14))
+                if (($q == NULL) || ($q < 1))
                     header("location: formulario.php?q=1");
+                else if(($q > 14))
+                    header("location: index.php?r=tabela");
                 $sql = "SELECT * FROM questoes where id = " . $q;
                 $num_question = "SELECT count(*) FROM questoes";
                 $resMAX = mysql_query($num_question);
@@ -56,7 +58,7 @@
                     echo /* $row['id'] . " " . */$row['questao'] . "<br>" . "<p>";
                     
                     /* Abre o formulario */
-                    echo "<form action=\"atualiza_pagina.php\" method=\"POST\">";
+                    echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
                     /* Recupera as possiveis respostas */
                     $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
                     $resresp = mysql_query($sql);
@@ -68,7 +70,7 @@
                           } */
                         echo "/>" . $rowresp['rotulo'];
                         echo "<input type=hidden name=\"q\" value=" . $q . " />";
-                        echo "<input type=hidden name=\"op\" value=" . $q . " />";
+                        echo "<input type=hidden name=\"op\" id=\"vaiprafrente\" value=" . $q . " />";
                     }
                 }
                 ?>
@@ -80,17 +82,17 @@
                     <tr>
                         <td>
                             <?php if ($q > 1) { ?>
-                                <input class ="button"name="back" type="button" id="form" value="<< Anterior" onclick="return validaForm('a');"/>
+                                <input class ="button"name="back" type="button" value="<< Anterior" onclick="mudaPagina('a');"/>
                             <?php } ?>
                         </td>
                         <td class="button"> </td>
                         <td>
                             <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
-                            <input class = "button_prox"name = "next" type = "button" id = "form" value = "<?php echo $botao;?>" onclick = "return validaForm('p');" />
+                          <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao;?>" onclick="mudaPagina('p');"/>
                         </td>
                     </tr>
                 </table>
-
+            </form>
 
             </div>
             <div class="rodape">

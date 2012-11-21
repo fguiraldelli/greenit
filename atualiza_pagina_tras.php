@@ -4,7 +4,7 @@ include("sessao.php");
 include("connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $op = $_POST['vaiprafrente'];
+    $op = "a";
     print "<br>".$_POST["op"]."-op<br>";
     print "<br>".$_POST["vaiprafrente"]."-frente<br>";
     $idu = $_SESSION["idu"];
@@ -16,7 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $data = date("Y-m-d");
 
     $sql = "SELECT * FROM respostas WHERE idu=" . $idu .
-            " AND idq=" . $q . " AND data='" . $data . "'";
+            " AND idq    } else {
+        if ($q < 14) {
+            $pag = $q + 1;
+        }=" . $q . " AND data='" . $data . "'";
     $res = mysql_query($sql);
     $linhas = mysql_num_rows($res);
     if ($linhas) {

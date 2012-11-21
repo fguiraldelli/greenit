@@ -4,7 +4,7 @@ include("sessao.php");
 include("connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $op = $_POST['vaiprafrente'];
+    $op = "p";
     print "<br>".$_POST["op"]."-op<br>";
     print "<br>".$_POST["vaiprafrente"]."-frente<br>";
     $idu = $_SESSION["idu"];
@@ -37,8 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $pag = $q - 1;
         }
     } else {
-        if ($q < 14) {
+        if ($q < 15) {
             $pag = $q + 1;
+        }
+        else{
+            header("Location: index.php?r=tabela");
         }
         //echo $sql;
     }

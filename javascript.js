@@ -53,7 +53,7 @@ function matchSenha(id,match){
 }
 
 
-function validaForm(op){
+function validaForm(){
     if (!validaNome("nome",document.getElementById("nome").value)) {
         alert("Preencha o nome corretamente");
         return false;
@@ -79,7 +79,26 @@ function validaForm(op){
         return false;
     }
 
-    document.getElementById("op").value = op;
+
     return true;
 
+}
+
+function mudaPagina(retorno){
+ 
+    document.getElementById('vaiprafrente').value = retorno;
+    //alert(document.getElementById("vaiprafrente").value)
+    if (retorno == 'p'){
+        //alert("entrou aqui");
+        document.getElementById("form2").action = "atualiza_pagina_frente.php";
+        document.getElementById("form2").submit();
+        return false;
+    }
+    //alert("pulou if");
+    document.getElementById("form2").action = "atualiza_pagina_tras.php";
+    document.getElementById("form2").submit();
+    return false;
+    
+//document.getElementById("form2").submit();
+        
 }
