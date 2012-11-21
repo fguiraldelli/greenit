@@ -12,7 +12,7 @@
  Assunto: $assunto
  Mensagem: $mensagem","FROM:$nome<$email>");
 
- header("Location: $sucesso sucesso.php");
+ header("Location: index.php?r=sucesso");
 	//echo "sua mensagem foi enviada com sucesso!"; //aí mostramos no navegador da pessoa que enviou o email uma mensagem de sucesso
 
 ?>

@@ -59,6 +59,9 @@
                     case "contato":
                         include("contato.php");
                         break;
+                    case "sucesso":
+                        include("sucesso.php");
+                        break;
                     default : header("Location: index.php?r=inicio");
                 }
                 ?>
