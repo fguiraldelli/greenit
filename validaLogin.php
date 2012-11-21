@@ -10,7 +10,7 @@ if ($usuario != "" && $senha != "") {
     $res = mysql_query($sql);
     $campoUser = mysql_fetch_array($res);
     print "Bem Vindo, " . $campoUser["nome"] . "<br>";
-    print "Seu id é, " . $campoUser["id"] . "<br>";
+    //print "Seu id é, " . $campoUser["id"] . "<br>";
     $linhas = mysql_num_rows($res);
     if ($linhas == 1) {
         //inicia a sessao
