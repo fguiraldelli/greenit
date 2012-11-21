@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -5,7 +6,7 @@
         <script src="javascript.js"></script>
     </head>
     <body>
-
+ 
         <div class="geral">
             <div class="cabecalho">
                 <?php include("cabecalho.php"); ?>
@@ -15,7 +16,7 @@
             </div>
             <div class="login">
                 <?php
-                session_start();
+                
                 //print $campoUser["nome"];
                 if ($_SESSION["AUTH"] == true) {
                     echo $_SESSION["usuario"] . " ";
@@ -69,6 +70,6 @@
             <div class="rodape">
                 <?php include("rodape.php"); ?>
             </div>
-        </div
+        </div>
     </body>
 </html>

@@ -1,31 +1,6 @@
 <div class="breadcrumbs">
     <a href="index.php">Início</a> >> <span>Tabela</span>
 </div>
-<div>
-    <p style="text-align: center; font-size: 14px; font-weight: bold;">Legenda</p>
-    <p>
-    <table class ="resultado">
-        <tr>
-            <td class ="s22"></td>
-            <td class ="s0">Plenamente Sustentável</td>
-            <td class ="s21"></td>
-            <td class ="s0">Sustentável</td>
-            <td class ="s11"></td>
-            <td class ="s0">Parcialmente Sustentável</td>
-            <td class ="s00"></td>
-            <td class ="s0">Neutro</td>
-        </tr>
-        <tr>
-            <td class ="s-12"></td>
-            <td class ="s0">Plenamente Insustentável</td>
-            <td class ="s-11"></td>
-            <td class ="s0">insustentável</td>
-            <td class ="s-10"></td>
-            <td class ="s0">Parcialmente insustentável</td>
-        </tr>
-    </table>
-    </p>
-</div>
 <?php
 
 include ("sessao.php");
@@ -65,3 +40,28 @@ while ($i < $linhas) {
 }
 echo "</table>";
 ?>
+<div>
+    <p style="text-align: center; font-size: 14px; font-weight: bold;">Legenda</p>
+    <p>
+    <table class ="resultado">
+        <tr>
+            <td class ="s22"></td>
+            <td class ="s0">Plenamente Sustentável</td>
+            <td class ="s21"></td>
+            <td class ="s0">Sustentável</td>
+            <td class ="s11"></td>
+            <td class ="s0">Parcialmente Sustentável</td>
+            <td class ="s00"></td>
+            <td class ="s0">Neutro</td>
+        </tr>
+        <tr>
+            <td class ="s-12"></td>
+            <td class ="s0">Plenamente Insustentável</td>
+            <td class ="s-11"></td>
+            <td class ="s0">insustentável</td>
+            <td class ="s-10"></td>
+            <td class ="s0">Parcialmente insustentável</td>
+        </tr>
+    </table>
+    </p>
+</div>
