@@ -6,19 +6,20 @@
       <!--<td class="cadastro">Nome:</td>-->
     <label class="cadastro">Nome <span class="style1">*</span></label><br>
     <input name="nome" type="text" id="nome" size="70" maxlength="60" onkeyup="validaNome(this.id,this.value)"/>
-    <br></p>
+    <br /><br />
     <label class="cadastro">Empresa <span class="style1">*</span></label><br>
     <input name="empresa" type="text" id="empresa" size="70" maxlength="60" onkeyup="validaEmpresa(this.id,this.value)"/>
-    <br></p>
+    <br /><br />
     <label class="cadastro">Email <span class="style1">*</span></label><br>
     <input name="email" type="text" id="email" size="70" maxlength="60" onkeyup="validaEmail(this.id,this.value)"/>
-    <br></p>
+    <br /><br />
     <label class="cadastro">Senha <span class="style1">*</span></label><br>
     <input name="senha" type="password" id="senha" maxlength="12" onkeyup="validaSenha(this.id,this.value)"/>
-    <span class="style1"> Digite uma senha de 7 a 12 caracteres</span><br></p>
+    <span class="style1"> Digite uma senha de 7 a 12 caracteres</span>
+    <br /><br />
     <label class="cadastro">Repita a Senha <span class="style1">*</span></label><br>
     <input name="repsenha" type="password" id="repsenha" maxlength="12" onkeyup="matchSenha(this.id,this.value)"/>
-    <br>
+    <br /><br />
     <p>
         <input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar" onclick="return validaForm();" /> 
 

@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $pag = $q - 1;
         }
     } else {
-        if ($q < 15) {
+        if ($q < 29) {
             $pag = $q + 1;
         }
         else{
