@@ -63,7 +63,7 @@
                         
                         //$cont = $cont + 1;
                         
-                        echo "cont: " . $cont;
+                        //echo "cont: " . $cont;
                         
                         /*echo "<div class = \"question-form\"><p>Questão " .
                         $q . " de " . $MAX[0] . "</p></div>";*/
@@ -86,7 +86,7 @@
                             echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
                         }
 
-                        echo  $row['id'] . " " . $row['questao'] . "<br>" . "<p>";
+                        echo  /*$row['id'] . " " .*/ $row['questao'] . "<br>" . "<p>";
 
                         /* Abre o formulario */
                         echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
