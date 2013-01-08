@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php error_reporting(0); ?>
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -16,7 +16,7 @@
             </div>
             <div class="login">
                 <?php
-                
+                session_start();
                 //print $campoUser["nome"];
                 if ($_SESSION["AUTH"] == true) {
                     echo $_SESSION["usuario"] . " ";
