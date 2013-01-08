@@ -1,4 +1,36 @@
-<?php include("cabecalho.php");?>
+<?php error_reporting(0); ?>
+<?php include("sessao.php"); ?>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="padrao.css">
+        <script src="javascript.js"></script>
+    </head>
+    <body>
+
+        <div class="geral">
+            <div class="cabecalho">
+                <?php include("cabecalho.php"); ?>
+            </div>
+            <div class="menu">
+                <?php include("menu.php"); ?>
+            </div>
+            <div class="login">
+                <?php
+                session_start();
+                //print $campoUser["nome"];
+                if ($_SESSION["AUTH"] == true) {
+                    echo $_SESSION["usuario"] . " ";
+                    //echo time() - $_SESSION['TIME'];
+                    echo " ," . " " . "<a href = " . "logout.php" . " >SAIR</a>";
+                }
+                if (time() - $_SESSION['TIME'] > 1800) {
+                    session_destroy();
+                    session_unset();
+                }
+                ?>
+
+            </div>
             <div class="conteudo">
                 <div class="breadcrumbs-form">
                     <a href="index.php">Início</a> >> <span>Formulário</span>
@@ -69,27 +101,34 @@
                             echo "<input type=hidden name=\"op\" id=\"vaiprafrente\" value=" . $q . " />";
                         }
                     }
-                    ?>
-                    <p>
-                        <label>Se quiser justifique abaixo a sua resposta:</label><br>
-                        <textarea name="just"  id="mensagem" cols="60" rows="8" maxlength="700"></textarea>
-                    </p>
-                    <table>
-                        <tr>
-                            <td>
-                                <?php if ($q > 1) { ?>
-                                    <input class ="button" name="back" type="button" value="<< Anterior" onclick="mudaPagina('a');"/>
-                                <?php } ?>
-                            </td>
-                            <td class="button"> </td>
-                            <td>
-                                <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
-                            <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao;?>" onclick="mudaPagina('p');"/>
-                            </td>
-                        </tr>
-                    </table>
-                </form> <!-- fecha o form que foi aberto no codigo php -->
+                }
+                ?>
+                <p>
+                    <label class="cadastro">Se quiser justifique abaixo a sua resposta:</label><br>
+                    <textarea name="just" wrap="VIRTUAL" id="mensagem" cols="54" rows="8" size="700"></textarea>
+                </p>
+                <p><table >
+                    <tr>
+                        <td>
+                            <?php if ($q > 1) { ?>
+                                <input class ="button"name="back" type="button" value="<< Anterior" onclick="mudaPagina('a');"/>
+                            <?php } ?>
+                        </td>
+                        <td class="button"> </td>
+                        <td>
+                            <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
+                            <?php $js_onclick = ""; if (strcmp($botao, "Finaliza") == 0){$js_onclick = "finaliza('p');";} else {$js_onclick = "mudaPagina('p');";}?>
+                          <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao;?>" onclick="<?php echo $js_onclick;?>"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
 
                 </div>
             </div>
-<?php include("rodape.php");?>
+            <div class="rodape">
+                <?php include("rodape.php"); ?>
+            </div>
+        </div>
+    </body>
+</html>
