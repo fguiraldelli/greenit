@@ -47,7 +47,10 @@
         // Imprime as linhas com as cores
         for ($j = 0; $j < 8; $j++) {
             print "<td class = s" . mysql_result($result_user, $i, 2) .
-                    mysql_result($result_user, $j, 2) . "> </td>";
+                    mysql_result($result_user, $j, 2) . "> 
+                    <span> <strong> Aspecto do Negócio:</strong><br /> " . mysql_result($result_user, $j, 3) ." <br /><br />
+                            <strong> Aspecto de sustentabilidade:</strong><br /> " . mysql_result($result_user, $i, 3) .
+                    "</span> </td>";
         }
         echo "</tr>";
         $i++;
@@ -58,15 +61,15 @@
     <p style="text-align: center; font-size: 14px; font-weight: bold;">Legenda</p>
 
     <table class ="resultado">
-        <tr>
+        <tr class="legenda">
             <td class="legenda">Alta correlação <strong>NEGATIVA</strong> com sustentabilidade</td>
-            <td class ="s-12"></td>
-            <td class ="s-11"></td>
-            <td class ="s-10"></td>
-            <td class ="s11"></td>
-            <td class ="s00"></td>
-            <td class ="s21"></td>
-            <td class ="s22"></td>
+            <td class ="s-12"> <span> Vermelho Escuro </span> </td>
+            <td class ="s-11"> <span> Vermelho Claro </span> </td>
+            <td class ="s-10"> <span> Laranja </span> </td>
+            <td class ="s11"> <span> Amarelo </span> </td>
+            <td class ="s00"> <span> Cinza claro </span> </td>
+            <td class ="s21"> <span> Verde Claro </span> </td>
+            <td class ="s22"> <span> Verde Escuro </span> </td>
             <td class="legenda">Alta correlação <strong>POSITIVA</strong> com sustentabilidade</td>
         </tr>
     </table>

@@ -1,7 +1,7 @@
 <?php
 
-include("sessao.php");
-include("connection.php");
+//include("sessao.php");
+//include("connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $op = "p";
@@ -19,6 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             " AND idq=" . $q . " AND data='" . $data . "'";
     $res = mysql_query($sql);
     $linhas = mysql_num_rows($res);
+    
+    if($just=='') $just = "sem justificativa";
+    
     if ($linhas) {
         $sql = "UPDATE respostas SET `resp` = " . $resp . ", `just` = '" . $just .
                 "' WHERE `idu`=" . $idu . " AND `idq`=" . $q . " AND `data`='" . $data . "'";
