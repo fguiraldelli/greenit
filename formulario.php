@@ -88,8 +88,7 @@
                         <td class="button"> </td>
                         <td>
                             <?php $botao = ""; if ($q != $MAX[0]){$botao = "Proximo >>";} else {$botao = "Finaliza";}?>
-                            <?php $js_onclick = ""; if (strcmp($botao, "Finaliza") == 0){$js_onclick = "finaliza('p');";} else {$js_onclick = "mudaPagina('p');";}?>
-                            <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao;?>" onclick="<?php echo $js_onclick;?>"/>
+                          <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao;?>" onclick="mudaPagina('p');"/>
                         </td>
                     </tr>
                 </table>

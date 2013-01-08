@@ -102,10 +102,3 @@ function mudaPagina(retorno){
 //document.getElementById("form2").submit();
         
 }
-
-function finaliza(retorno){
-    var confirmaFim = confirm("Tem certeza que deseja finalizar?");
-    if (confirmaFim == true){
-        mudaPagina(retorno);
-    }
-}
