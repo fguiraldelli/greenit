@@ -25,6 +25,6 @@
 
 <p>
     Se você quiser receber notícias sobre o nosso sistema, e nos ajudar a 
-    elaborar a versão beta do nosso software, informe seus dados abaixo e 
-    responda um pequeno questionário falando sobre seus interesses no sistema.
+    elaborar a versão beta do nosso software, cadastre-se no nosso site.
+    É simples, rápido e não custa nada!
 </p>
