@@ -70,6 +70,7 @@ if ($q > 1)
             /* Recupera as possiveis respostas */
             $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
             $resresp = mysql_query($sql);
+            echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
             while ($rowresp = mysql_fetch_array($resresp)) {
                 echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
                 if ($resp[2] == $rowresp['resp']) {
@@ -77,7 +78,7 @@ if ($q > 1)
                 }
                 echo "/>" . $rowresp['rotulo'] . "<br />";
                 echo "<input type=hidden name=\"q\" value=" . $q . " />";
-                echo "<input type=hidden name=\"op\" id=\"vaiprafrente\" value=" . $q . " />";
+                
             }
         }
         ?>

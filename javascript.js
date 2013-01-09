@@ -85,22 +85,10 @@ function validaForm(){
 }
 
 function mudaPagina(retorno){
- 
     document.getElementById('vaiprafrente').value = retorno;
-    //alert(document.getElementById("vaiprafrente").value)
-    if (retorno == 'p'){
-        //alert("entrou aqui");
-        document.getElementById("form2").action = "atualiza_pagina_frente.php";
+        document.getElementById("form2").action = "atualiza_pagina.php";
         document.getElementById("form2").submit();
-        return false;
-    }
-    //alert("pulou if");
-    document.getElementById("form2").action = "atualiza_pagina_tras.php";
-    document.getElementById("form2").submit();
-    return false;
-    
-//document.getElementById("form2").submit();
-        
+        return false;        
 }
 
 function finaliza(retorno){
