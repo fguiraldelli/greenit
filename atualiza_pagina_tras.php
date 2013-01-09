@@ -1,8 +1,6 @@
 <?php
-
-//include("sessao.php");
-//include("connection.php");
-
+include("sessao.php");
+include("connection.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $op = "a";
     print "<br>".$_POST["op"]."-op<br>";
@@ -45,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
         //echo $sql;
     }
-    $url = "Location: formulario.php?q=" . $pag;
+    $url = "Location: index.php?r=form&q=" . $pag;
     header($url);
 }
 ?>

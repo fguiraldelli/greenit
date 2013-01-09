@@ -49,7 +49,7 @@ session_start();
                         ?>
                     </li>
 
-                    <li <?php if ($_GET['r'] == 'cadastro') echo "class=\"active\"" ?> 
+                    <li <?php if ($_GET['r'] == 'cadastro') echo "class=\"active\"" ?> >
                     <?php
                     if ($_SESSION["AUTH"] == false) {
                         echo '<a href="index.php?r=cadastro">Cadastro</a>';

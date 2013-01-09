@@ -1,3 +1,4 @@
+<?php include("cabecalho.php");?>
 <?php
 
 //include("sessao.php");
@@ -46,3 +47,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     header($url);
 }
 ?>
+<?php include("rodape.php");?>
