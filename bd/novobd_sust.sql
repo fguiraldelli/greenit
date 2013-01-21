@@ -194,20 +194,23 @@ CREATE TABLE IF NOT EXISTS `tecnologia` (
 --
 
 CREATE TABLE IF NOT EXISTS `tipo_resposta` (
+  `tipo` int(11) NOT NULL,
   `rotulo` varchar(70) NOT NULL,
-  `resp` int(11) NOT NULL,
-  PRIMARY KEY (`resp`)
+  `resp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `tipo_resposta`
 --
 
-INSERT INTO `tipo_resposta` (`rotulo`, `resp`) VALUES
-('Pelo contrário, acarreta impacto negativo sobre o aspecto', -1),
-('Não', 0),
-('Talvez - Incerto - Parcialmente\n', 1),
-('Sim - Plenamente', 2);
+INSERT INTO `tipo_resposta` (`tipo`, `rotulo`, `resp`) VALUES
+(2, 'Pelo contrário, acarreta impacto negativo sobre o aspecto', -1),
+(2, 'Não', 0),
+(2, 'Talvez - Incerto - Parcialmente\n', 1),
+(2, 'Sim - Plenamente', 2),
+(1, 'Sim - Plenamente', 2),
+(1, 'Talvez - Incerto - Parcialmente', 1),
+(1, 'Não', 0);
 
 -- --------------------------------------------------------
 
@@ -248,8 +251,8 @@ ALTER TABLE `just-matriz`
 -- Restrições para a tabela `proj-tec`
 --
 ALTER TABLE `proj-tec`
-  ADD CONSTRAINT `proj@002dtec_ibfk_2` FOREIGN KEY (`idt`) REFERENCES `tecnologia` (`id`),
-  ADD CONSTRAINT `proj@002dtec_ibfk_1` FOREIGN KEY (`idp`) REFERENCES `projeto` (`idp`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `proj@002dtec_ibfk_1` FOREIGN KEY (`idp`) REFERENCES `projeto` (`idp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proj@002dtec_ibfk_2` FOREIGN KEY (`idt`) REFERENCES `tecnologia` (`id`);
 
 --
 -- Restrições para a tabela `projeto`
