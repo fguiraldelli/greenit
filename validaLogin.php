@@ -25,13 +25,14 @@ if ($usuario != "" && $senha != "") {
         $_SESSION["TIME"] = time();
         $_SESSION["idu"] = $campoUser["id"];
 
-        include("inicio.php");
-        
+       // include("inicio.php");
+        header('location: index.php', true);
     } else {
         echo "<font color=red><strong>Erro: Usuário e/ou senha incorretos.</strong></font>";
         //se o usuario nao for encontrado, nao autentica
         $_SESSION["AUTH"] = false;
-        include("inicio.php");
+        //include("inicio.php");
+        header("location: index.php?r=inicio");
     }
 } else {
     if ($_POST['abriuForm'] == 1) {

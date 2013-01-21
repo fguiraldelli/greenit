@@ -1,7 +1,7 @@
 <?php
-if ($q > 1)
-    echo 'include("cabecalho.php");'
-    ?>
+if ($q > 0)
+    include("cabecalho.php");
+?>
 
 <div class="conteudo">
     <div class="breadcrumbs-form">
@@ -11,11 +11,11 @@ if ($q > 1)
 
         <?php
         include("connection.php");
-        $q = (isset($_GET['q'])) ? $_GET['q'] : 1;
+        $q = (isset($_GET['q'])) ? $_GET['q'] : 0;
 
         /* Recupera a questao */
-        if (!isset($q) || ($q < 1))
-            header("location: formulario.php?q=1");
+        if (!isset($q) || ($q < 0))
+            header("location: formulario.php?q=0");
         else if (($q > 28))
             header("location: index.php?r=tabela");
         $idu = $_SESSION["idu"];
@@ -34,62 +34,88 @@ if ($q > 1)
         $MAX = mysql_fetch_array($resMAX); // quantidade total de questoes
         $cont = 0;
 
-        while ($row = mysql_fetch_array($res)) {
 
 
-            //$cont = $cont + 1;
-            //echo "cont: " . $cont;
-
-            /* echo "<div class = \"question-form\"><p>Questão " .
-              $q . " de " . $MAX[0] . "</p></div>"; */
-
-            // Para separar as questoes relacionadas com sustentabilidade das questoes de fatores de sucesso para o negócio
-            if ($q < 9) {
-                echo "<div class = \"question-form\"><p>1ª Parte: Fatores de Sucesso para o negócio</p></div><hr />";
-                echo "<div class = \"question-form\"><p>Questão " . $q . " de 8 </p></div>";
-            } else if ($q < 14) {
-                echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Natureza do Produto</p></div><hr />";
-                echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
-            } else if ($q < 19) {
-                echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Atratividade/Funcionalidade</p></div><hr />";
-                echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
-            } else if ($q < 24) {
-                echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Governança</p></div><hr />";
-                echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
-            } else {
-                echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Alinhamento às causas de sustentabilidade</p></div><hr />";
-                echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
-            }
-
-            echo /* $row['id'] . " " . */ $row['questao'] . "<br>" . "<p>";
-
+        if ($q == 0) {
             /* Abre o formulario */
             echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
-
-            print $rowresp['resp'];
-            /* Recupera as possiveis respostas */
-            $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
-            $resresp = mysql_query($sql);
             echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
-            while ($rowresp = mysql_fetch_array($resresp)) {
-                echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
-                if ($resp[2] == $rowresp['resp']) {
-                    echo 'checked';
+            echo "<input type=hidden name=\"q\" value=" . $q . " />";
+            
+            echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
+            
+            echo "<br /><label>Nome do Projeto<br /></label>";
+            echo "<input type=text id='nome-proj' size=50 maxlength=50/>";
+            echo "<br /><br /><label>Descrição do Projeto<br /></label>";
+            echo "<textarea id='descr-proj' cols=60 rows=8></textarea>";
+            
+            echo "<br /><br /><label>Tecnologias utilizadas<br /></label>";
+            echo "<select><option>Outra...</option></select>";
+            echo "<input type=button id='add-tec' value='Adicionar Tecnologia' />";
+            echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/>";
+            echo "<br /><br /><label>Descrição da Tecnologia<br /></label>";
+            echo "<textarea id='descr-tec' cols=60 rows=4></textarea>";
+            
+        } else {
+
+            while ($row = mysql_fetch_array($res)) {
+
+
+                //$cont = $cont + 1;
+                //echo "cont: " . $cont;
+
+                /* echo "<div class = \"question-form\"><p>Questão " .
+                  $q . " de " . $MAX[0] . "</p></div>"; */
+
+                // Para separar as questoes relacionadas com sustentabilidade das questoes de fatores de sucesso para o negócio
+                if ($q < 9) {
+                    echo "<div class = \"question-form\"><p>1ª Parte: Fatores de Sucesso para o negócio</p></div><hr />";
+                    echo "<div class = \"question-form\"><p>Questão " . $q . " de 8 </p></div>";
+                } else if ($q < 14) {
+                    echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Natureza do Produto</p></div><hr />";
+                    echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
+                } else if ($q < 19) {
+                    echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Atratividade/Funcionalidade</p></div><hr />";
+                    echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
+                } else if ($q < 24) {
+                    echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Governança</p></div><hr />";
+                    echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
+                } else {
+                    echo "<div class = \"question-form\"><p>2ª Parte: Aspectos de Sustentabilidade - Alinhamento às causas de sustentabilidade</p></div><hr />";
+                    echo "<div class = \"question-form\"><p>Questão " . ($q - 8) . " de 20 </p></div>";
                 }
-                echo "/>" . $rowresp['rotulo'] . "<br />";
-                echo "<input type=hidden name=\"q\" value=" . $q . " />";
+
+                echo /* $row['id'] . " " . */ $row['questao'] . "<br>" . "<p>";
+
+                /* Abre o formulario */
+                echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
+
+                print $rowresp['resp'];
+               
+                /* Recupera as possiveis respostas */
+                $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
                 
+                $resresp = mysql_query($sql);
+                echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
+                while ($rowresp = mysql_fetch_array($resresp)) {
+                    echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
+                    if ($resp[2] == $rowresp['resp']) {
+                        echo 'checked';
+                    }
+                    echo "/>" . $rowresp['rotulo'] . "<br />";
+                    echo "<input type=hidden name=\"q\" value=" . $q . " />";
+                }
             }
-        }
-        ?>
-        <p>
-            <label>Se quiser justifique abaixo a sua resposta:</label><br>
-            <textarea name="just"  id="mensagem" cols="60" rows="8" maxlength="700"><?php echo $resp[3]; ?></textarea>
-        </p>
+            ?>
+            <p>
+                <label>Se quiser justifique abaixo a sua resposta:</label><br>
+                <textarea name="just"  id="mensagem" cols="60" rows="8" maxlength="700"><?php echo $resp[3]; ?></textarea>
+            </p>
+        <?php } //fim if  ?>
         <table>
             <tr>
                 <td>
-                    <?php if ($q > 1) { ?>
+                    <?php if ($q > 0) { ?>
                         <input class ="button" name="back" type="button" value="<< Anterior" onclick="mudaPagina('a');"/>
                     <?php } ?>
                 </td>
@@ -120,7 +146,6 @@ if ($q > 1)
     </div>
 </div>
 <?php
-if ($q > 1)
-    echo 'include("rodape.php");'
-    
+if ($q > 0)
+    include("rodape.php");
 ?>

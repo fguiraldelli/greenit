@@ -86,9 +86,9 @@ function validaForm(){
 
 function mudaPagina(retorno){
     document.getElementById('vaiprafrente').value = retorno;
-        document.getElementById("form2").action = "atualiza_pagina.php";
-        document.getElementById("form2").submit();
-        return false;        
+    document.getElementById("form2").action = "atualiza_pagina.php";
+    document.getElementById("form2").submit();
+    return false;        
 }
 
 function finaliza(retorno){
@@ -96,4 +96,8 @@ function finaliza(retorno){
     if (confirmaFim == true){
         mudaPagina(retorno);
     }
+}
+
+function mostra(p){
+    alert(p);
 }
