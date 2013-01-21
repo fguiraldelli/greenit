@@ -111,7 +111,7 @@ div.conteudo{
     position: relative;
     background-color: #ffffff;
     padding: 20px;
-    min-height: 500px;
+    min-height: 600px;
     /*margin: 10px 20px;*/  
     font-size: 14px;
     text-align: justify;
@@ -348,6 +348,43 @@ table.resultado tr.legenda td{
     width: 50px;
 }
 
+div.col-esquerda{
+    float: left;
+    width: 47%;
+    padding:10px;
+    padding-right: 15px;
+    padding-top: 0;
+    border-right: solid 1px lightgray;
+    height: 90%;
+}
+
+div.col-esquerda p.texto, div.col-direita p.texto {
+    font-size: 12px;
+    line-height: 20px;
+}
 
 
+div.col-direita{
+    float:right;
+    width: 47%;
+    height: 60%;
+    
+}
+
+a.big-button{
+    text-decoration: none;
+    background: #66b400;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+   -webkit-border-radius: 10px;
+}
+
+
+a.big-button:hover{
+    text-decoration: none;
+    background: #339900;
+    padding: 20px;
+   -webkit-border-radius: 10px;
+}
 

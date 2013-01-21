@@ -1,4 +1,5 @@
 <?php
+
 //error_reporting(0);
 include("connection.php");
 
@@ -15,29 +16,32 @@ if ($usuario != "" && $senha != "") {
         //inicia a sessao
         session_set_cookie_params(0);
         session_start();
-        echo "Login efetuado com sucesso.<br>";
-        print "Bem Vindo, " . $campoUser["nome"] . "<br>";
-        echo "<a href="."index.php?r=inicio".">Voltar</a>";
+        //echo "Login efetuado com sucesso.<br>";
+        //print "Bem Vindo, " . $campoUser["nome"] . "<br>";
+        //echo "<a href=" . "index.php?r=inicio" . ">Voltar</a>";
         //coloca na sessao o codigo e o nome de usuario
         $_SESSION["AUTH"] = true;
         $_SESSION["usuario"] = $campoUser["nome"];
         $_SESSION["TIME"] = time();
         $_SESSION["idu"] = $campoUser["id"];
+
+        include("inicio.php");
+        
     } else {
-        echo "<font color=red><b>Erro: Usuário e/ou senha incorretos.</b></font><br />";
+        echo "<font color=red><strong>Erro: Usuário e/ou senha incorretos.</strong></font>";
         //se o usuario nao for encontrado, nao autentica
         $_SESSION["AUTH"] = false;
-        include("login.php");
+        include("inicio.php");
     }
 } else {
     if ($_POST['abriuForm'] == 1) {
         if ($usuario == "") {
-            echo "<font color=red><b>Erro: Digite um nome de usuário.</b></font><br />";
+            echo "<font color=red><b>Erro: Digite um nome de usuário.</b></font>";
         }
         if ($senha == "") {
-            echo "<font color=red><b>Erro: Digite uma senha.</b></font><br />";
+            echo "<font color=red><b>Erro: Digite uma senha.</b></font>";
         }
-        include("login.php");
+        include("inicio.php");
     }
 }
 ?>

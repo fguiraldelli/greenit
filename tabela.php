@@ -50,6 +50,7 @@
                     mysql_result($result_user, $j, 2) . "> 
                     <span> <strong> Aspecto do Negócio:</strong><br /> " . mysql_result($result_user, $j, 3) ." <br /><br />
                             <strong> Aspecto de sustentabilidade:</strong><br /> " . mysql_result($result_user, $i, 3) .
+                            "<br /><br /><strong> Comentário:</strong><br /><textarea rows=3; cols=20;></textarea>" .
                     "</span> </td>";
         }
         echo "</tr>";

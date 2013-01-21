@@ -15,11 +15,12 @@ if (!$linhas) {
     VALUES ('" . "$nome" . "', " . "'$empresa'" . "," . "'$email'" . ", " . "'$senha'" . ")";
     mysql_query($query);
 
-    echo "Seu cadastro foi realizado com sucesso! Agradecemos a atenção<br>";
-    echo "<a href=" . "index.php?r=inicio" . ">Voltar</a>";
+    echo "Seu cadastro foi efetuado com sucesso! Agora é só fazer o login para usar o site!<br />";
+    //echo "<a href=" . "index.php?r=inicio" . ">Voltar</a>";
+    include("inicio.php");
 }
 else{
-    echo "<font color=red><b>Erro: Usuário já existe, tente outro e-mail!!!.</b></font><br />";
-    echo "<a href=" . "index.php?r=cadastro" . ">Voltar</a>";
+    echo "<font color=red><strong>Erro: Usuário já existe, tente outro e-mail ou faça login.</strong></font><br />";
+    include("inicio.php");
 }
 ?>

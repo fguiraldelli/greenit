@@ -21,11 +21,8 @@
     <input name="repsenha" type="password" id="repsenha" maxlength="12" onkeyup="matchSenha(this.id,this.value)"/>
     <br /><br />
     <p>
-        <input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar" onclick="return validaForm();" /> 
-
-
+        <input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar" onclick="return validaForm();" />
         <input name="limpar" type="reset" id="limpar" value="Limpar" />
-
-
-        <span class="style1"><br>* Campos com * são obrigatórios!<br> Campos em vermelho precisam ser revisados</span></p>
+        <span class="style1"><br>* Campos com * são obrigatórios!<br> Campos em vermelho precisam ser revisados</span>
+    </p>
 </form>
