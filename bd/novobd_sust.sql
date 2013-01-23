@@ -19,9 +19,18 @@ SET time_zone = "+00:00";
 --
 -- Banco de Dados: `sust`
 --
-
+-- Apaga Tabelas se existem
+--
+DROP TABLE IF EXISTS `just-matriz`;
+DROP TABLE IF EXISTS `matriz`;
+DROP TABLE IF EXISTS `proj-tec`;
+DROP TABLE IF EXISTS `respostas`;
+DROP TABLE IF EXISTS `tecnologia`;
+DROP TABLE IF EXISTS `tipo_resposta`;
+DROP TABLE IF EXISTS `projeto`;
+DROP TABLE IF EXISTS `questoes`;
+DROP TABLE IF EXISTS `usuario`;
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `just-matriz`
 --
