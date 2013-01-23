@@ -413,7 +413,7 @@ div.col-meio{
 
 div.col-direita2{
     float:right;
-    width: 20%;
+    width: 70%;
     height: 60%;
     
 }
@@ -443,3 +443,43 @@ div titulo{
     /*padding: 5px 20px;*/
     height: 25px;
 }
+
+td.button{
+
+    font-size: 8px;
+    padding:6px;
+}
+
+td.proj {
+    width: 400px;
+    padding:6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 11pt;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table.projeto tr {
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+}
+
+a.small-button{
+    text-decoration: none;
+    background: #66b400;
+    color: white;
+    font-size: 10px;
+    padding: 5px;
+   -webkit-border-radius: 10px;
+}
+
+a.small-button:hover{
+    text-decoration: none;
+    background: #339900;
+    padding: 5px;
+   -webkit-border-radius: 10px;
+}
+

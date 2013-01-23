@@ -14,35 +14,36 @@ include("connection.php");
         <p class="titulo"> Opções </p>
         <br />
         <a href="#" class="medium-button"> Adicionar Novo Projeto </a>
-        
-        
-        
+
+
+
     </div>
-    <div class="col-meio">
+    <div class="col-direita2">
         <p class="titulo"> Histórico de Projetos</p>
-        <p class="texto"  onmouseover="showDiv('dadosProj');">
-            <a href="#"  onmouseover="dados-proj.style.display=''"> Projeto ABCD </a>
-        </p>
-        <p class="texto">
-            <a href="#"> Projeto XPTO </a>
-        </p>
-        <p class="texto">
-            <a href="#"> Projeto OO </a>
-        </p>
+
+        <table class="projeto">
+            <tr> 
+                <td class="proj">Projeto 1</td> 
+                <td class="button"><a href="#" class="small-button"> Ver Matriz </a></td> 
+                <td><a href="#" class="small-button"> Editar Questionário </a></td>
+            </tr>
+
+            <tr> 
+                <td class="proj">Projeto 2</td> 
+                <td class="button"><a href="#" class="small-button"> Ver Matriz </a></td> 
+                <td><a href="#" class="small-button"> Editar Questionário </a></td>
+            </tr>
+
+            <tr> 
+                <td class="proj">Projeto 3</td> 
+                <td class="button"><a href="#" class="small-button"> Ver Matriz </a></td> 
+                <td><a href="#" class="small-button"> Editar Questionário </a></td>
+            </tr>
+
+        </table>
+
+
         <br /><br />
     </div>
-    
-    <div class="col-direita2" id="dados-proj" style="display:none">
-        <p class="titulo"> Histórico de Projetos</p>
-        <p class="texto">
-            <a href="#"> Projeto ABCD </a>
-        </p>
-        <p class="texto">
-            <a href="#"> Projeto XPTO </a>
-        </p>
-        <p class="texto">
-            <a href="#"> Projeto OO </a>
-        </p>
-        <br /><br />
-    </div>
+
 </div>
