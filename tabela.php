@@ -6,7 +6,7 @@
     include("connection.php");
     $data = date("Y-m-d");
     $sql = "SELECT * FROM matriz";
-    $sql2 = "SELECT * FROM respostas WHERE idu = " . $_SESSION["idu"] /*. " AND data = '" . $data . "'"*/;
+    $sql2 = "SELECT * FROM respostas WHERE idp = " . $_SESSION["idp"] /*. " AND data = '" . $data . "'"*/;
     $result_user = mysql_query($sql2);
     $data_user = mysql_fetch_array($result_user);
     $result = mysql_query($sql);

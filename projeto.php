@@ -19,7 +19,7 @@ $idu = $_SESSION["idu"];
 
 
     </div>
-    <div class="col-meio">
+    <div class="col-direita2">
         <table class="projeto">
             <?php
             $sql = "select * from projeto where idu = " . $idu;
