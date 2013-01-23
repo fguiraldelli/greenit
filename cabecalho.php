@@ -31,14 +31,6 @@ session_start();
 
                     <li <?php if ($_GET['r'] == 'contato') echo "class=\"active\"" ?> >
                         <a href="index.php?r=contato">Contato</a>
-                    </li>      
-                    
-                    <li <?php if ($_GET['r'] == 'form') echo "class=\"active\"" ?> >
-                        <?php
-                        if ($_SESSION["AUTH"] == true) {
-                            echo '<a href="index.php?r=form">Projetos</a>';
-                        }
-                        ?>
                     </li>
                    <!-- <li <?/*php if ($_GET['r'] == 'tabela') echo "class=\"active\"" ?> >
                         <?php
@@ -53,8 +45,8 @@ session_start();
                         if ($_SESSION["AUTH"] == true) {
                             echo '<a href="index.php?r=form">Formulario</a>';
                         }
-                        ?>
-                    </li>
+                        */?>
+                    </li> -->
                     <li <?php if ($_GET['r'] == 'projeto') echo "class=\"active\"" ?> >
                         <?php if ($_SESSION["AUTH"] == true) {
                             echo '<a href="index.php?r=projeto">Projetos</a>';
