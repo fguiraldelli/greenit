@@ -388,3 +388,11 @@ a.big-button:hover{
    -webkit-border-radius: 10px;
 }
 
+div titulo{
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: darkgreen;
+    /*padding: 5px 20px;*/
+    height: 25px;
+}

@@ -90,6 +90,11 @@ function mudaPagina(retorno){
     document.getElementById("form2").submit();
     return false;        
 }
+function iniciaQuest(){
+    document.getElementById("form2").action = "novo_projeto.php";
+    document.getElementById("form2").submit();
+    return false; 
+}
 
 function finaliza(retorno){
     var confirmaFim = confirm("Tem certeza que deseja finalizar?");

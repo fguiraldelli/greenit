@@ -19,7 +19,8 @@ if ($q > 0)
         else if (($q > 28))
             header("location: index.php?r=tabela");
         $idu = $_SESSION["idu"];
-        $sql = "SELECT * FROM respostas where idu=" . $idu . " AND 
+        $idp = $_SESSION["idp"];
+        $sql = "SELECT * FROM respostas where idp=" . $idp . " AND 
                         idq = " . $q;
         $caresp = mysql_query($sql);
         $resp = mysql_fetch_array($caresp);
@@ -45,9 +46,9 @@ if ($q > 0)
             echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
             
             echo "<br /><label>Nome do Projeto<br /></label>";
-            echo "<input type=text id='nome-proj' size=50 maxlength=50/>";
+            echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50/>";
             echo "<br /><br /><label>Descrição do Projeto<br /></label>";
-            echo "<textarea id='descr-proj' cols=60 rows=8></textarea>";
+            echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8></textarea>";
             
             echo "<br /><br /><label>Tecnologias utilizadas<br /></label>";
             echo "<select><option>Outra...</option></select>";
@@ -66,7 +67,10 @@ if ($q > 0)
 
                 /* echo "<div class = \"question-form\"><p>Questão " .
                   $q . " de " . $MAX[0] . "</p></div>"; */
-
+                
+                // Mostra qual projeto esta sendo analizado
+                echo "<div class =\"question-form\"><h1>" . $_SESSION['titulopj'] . "</h1></div><br>";
+                
                 // Para separar as questoes relacionadas com sustentabilidade das questoes de fatores de sucesso para o negócio
                 if ($q < 9) {
                     echo "<div class = \"question-form\"><p>1ª Parte: Fatores de Sucesso para o negócio</p></div><hr />";
@@ -123,7 +127,9 @@ if ($q > 0)
                 <td>
                     <?php
                     $botao = "";
-                    if ($q != $MAX[0]) {
+                    if ($q == 0) {
+                        $botao = "Iniciar questionario";
+                    } else if ($q != $MAX[0]){
                         $botao = "Proximo >>";
                     } else {
                         $botao = "Finaliza";
@@ -133,6 +139,8 @@ if ($q > 0)
                     $js_onclick = "";
                     if (strcmp($botao, "Finaliza") == 0) {
                         $js_onclick = "finaliza('p');";
+                    } else if(strcmp($botao, "Iniciar questionario") == 0){
+                        $js_onclick = "iniciaQuest();";
                     } else {
                         $js_onclick = "mudaPagina('p');";
                     }
