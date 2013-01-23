@@ -53,8 +53,14 @@ session_start();
                         if ($_SESSION["AUTH"] == true) {
                             echo '<a href="index.php?r=form">Formulario</a>';
                         }
-                        */?>
-                    </li> -->
+                        ?>
+                    </li>
+                    <li <?php if ($_GET['r'] == 'projeto') echo "class=\"active\"" ?> >
+                        <?php if ($_SESSION["AUTH"] == true) {
+                            echo '<a href="index.php?r=projeto">Projetos</a>';
+                        }
+                        ?>
+                    </li>
                 </ul>
             </div>
             <div class="login">
