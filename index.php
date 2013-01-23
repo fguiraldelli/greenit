@@ -32,6 +32,9 @@
                 case "sucesso":
                     include("sucesso.php");
                     break;
+                case "projeto":
+                    include("projeto.php");
+                    break;
                 default : include("inicio.php");
             }
             ?>
