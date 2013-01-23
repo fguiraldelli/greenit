@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     print "<br>" . $_POST["op"] . "-op<br>";
     print "<br>" . $_POST["vaiprafrente"] . "-frente<br>";
     $idu = $_SESSION["idu"];
+    $idp = $_SESSION["idp"];
     print $idu . " = idu<br>";
     $q = $_POST["q"];
     print "<br>" . $_POST['q'] . "<br>";
@@ -15,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     $data = date("Y-m-d");
 
-    $sql = "SELECT * FROM respostas WHERE idu=" . $idu .
+    $sql = "SELECT * FROM respostas WHERE idp=" . $idp .
             " AND idq=" . $q;
     print $sql . "<br>";
     $res = mysql_query($sql);
@@ -27,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if ($linhas) {
         $sql = "UPDATE respostas SET `resp` = " . $resp . ", `just` = '" . $just .
-                "' WHERE `idu`=" . $idu . " AND `idq`=" . $q;
+                "' WHERE `idp`=" . $idp . " AND `idq`=" . $q;
         print $sql . "<br>"; //die();
     } else {
-        $sql = "INSERT INTO `respostas` (`idu`, `idq`, `resp`, `just`, `data`) VALUES " .
-                "(" . $idu . ", " . $q . ", " . $resp . ", '" . $just . "', '" . $data . "')";
+        $sql = "INSERT INTO `respostas` (`idp`, `idq`, `resp`, `just`) VALUES " .
+                "(" . $idp . ", " . $q . ", " . $resp . ", '" . $just . "')";
         print $sql; //die();
     }
     /* $resResp = */

@@ -48,11 +48,11 @@
 
 
 <?php } else { ?>    
-    
+
     <div class="col-esquerda">
-        
+
         <p class="titulo"> Avaliação </p>
-        
+
         <p class="texto"> 
             Para avaliar um projeto você terá que preencher um questionário dividido em duas partes: 
             Fatores de Sucesso para o Negócio e Aspectos voltados para a Sustentabilidade.
@@ -78,16 +78,25 @@
     <div class="col-direita">
         <p class="titulo"> Pesquisa de Mercado </p>
         <p class="texto">
-            Bla bla bla... Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
+            Vivamus accumsan velit in justo consequat faucibus. Fusce ac est 
+            felis, quis viverra urna. Sed rhoncus hendrerit volutpat. Fusce 
+            urna nisl, suscipit ut vestibulum eget, posuere eu libero. Class 
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+            inceptos himenaeos. Aliquam erat volutpat. Integer sit amet nisl 
+            vel lorem porttitor faucibus. Pellentesque habitant morbi tristique 
+            senectus et netus et malesuada fames ac turpis egestas. Donec 
+            malesuada, ante eu elementum placerat, leo quam ornare ipsum, 
+            ac dignissim nisi leo quis lorem. Proin vehicula tempus est eget 
+            mattis. Aliquam erat volutpat.
+
+
+
         </p>
         <p class="texto">
-            Bla bla bla... Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
-            Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...Bla bla bla...
+            Sed condimentum blandit congue. Vestibulum ligula neque, iaculis eget tincidunt 
+            a, placerat et magna. Vivamus ut dolor at leo cursus sodales. Ut vulputate arcu 
+            id enim tincidunt quis auctor diam egestas. Aenean quis nulla in ante fermentum 
+            pellentesque.
         </p>
         <br /><br />
         <a href="#" class="big-button"> Pesquisa de Mercado </a>
