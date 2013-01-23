@@ -1,4 +1,4 @@
-<br />
+<br/>
 
 <?php if ($_SESSION["AUTH"] == false) { ?>
 
