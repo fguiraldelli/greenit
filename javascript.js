@@ -95,6 +95,13 @@ function iniciaQuest(){
     document.getElementById("form2").submit();
     return false; 
 }
+function loadMatrix(retorno, tipo){
+    document.getElementById('nome-proj').value = retorno;
+    document.getElementById('tipo').value = tipo;
+    //document.getElementById("form3").action = "atualiza_matriz.php";
+    document.getElementById("form3").submit();
+    return false;        
+}
 
 function finaliza(retorno){
     var confirmaFim = confirm("Tem certeza que deseja finalizar?");

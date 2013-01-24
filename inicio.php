@@ -1,5 +1,4 @@
 <br/>
-
 <?php if ($_SESSION["AUTH"] == false) { ?>
 
     <div class="col-esquerda">
@@ -17,11 +16,37 @@
 
     </div>
     <div class="col-direita">
+        <p class="titulo"> Pesquisa de Mercado </p>
+        <p class="texto">
+            Vivamus accumsan velit in justo consequat faucibus. Fusce ac est 
+            felis, quis viverra urna. Sed rhoncus hendrerit volutpat. Fusce 
+            urna nisl, suscipit ut vestibulum eget, posuere eu libero. Class 
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+            inceptos himenaeos. Aliquam erat volutpat. Integer sit amet nisl 
+            vel lorem porttitor faucibus. Pellentesque habitant morbi tristique 
+            senectus et netus et malesuada fames ac turpis egestas. Donec 
+            malesuada, ante eu elementum placerat, leo quam ornare ipsum, 
+            ac dignissim nisi leo quis lorem. Proin vehicula tempus est eget 
+            mattis. Aliquam erat volutpat.
+
+
+
+        </p>
+        <p class="texto">
+            Sed condimentum blandit congue. Vestibulum ligula neque, iaculis eget tincidunt 
+            a, placerat et magna. Vivamus ut dolor at leo cursus sodales. Ut vulputate arcu 
+            id enim tincidunt quis auctor diam egestas. Aenean quis nulla in ante fermentum 
+            pellentesque.
+        </p>
+        <br /><br />
+        <a href="#" class="big-button"> Pesquisa de Mercado </a>
+        </div>
+        <!--
         <p class="titulo"> Cadastre-se </p>
         <span>Se você ainda possui um cadastro, informe os seus dados abaixo e clique em cadastrar para fazer um cadastro gratuito.</span><br /><br />
-        <form  name="cadastro" method="post" action="index.php?r=concad">
+        <form  name="cadastro" method="post" action="index.php?r=concad"> -->
               <!--<td class="cadastro">Nome:</td>-->
-            <label class="cadastro">Nome (não use acentos) <span class="style1">*</span></label><br>
+           <!-- <label class="cadastro">Nome (não use acentos) <span class="style1">*</span></label><br>
             <input name="nome" type="text" id="nome" size="70" maxlength="60" onkeyup="validaNome(this.id,this.value)"/>
             <br /><br />
             <label class="cadastro">Empresa <span class="style1">*</span></label><br>
@@ -42,9 +67,9 @@
                 <input name="limpar" type="reset" id="limpar" value="Limpar" />
                 <span class="style1"><br>* Campos com * são obrigatórios!<br> Campos em vermelho precisam ser revisados</span>
             </p>
-        </form>
+        </form>-->
 
-    </div>
+    
 
 
 <?php } else { ?>    

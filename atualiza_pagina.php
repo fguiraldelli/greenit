@@ -2,6 +2,7 @@
 
 include('sessao.php');
 include('connection.php');
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     print "<br>" . $_POST["op"] . "-op<br>";
     print "<br>" . $_POST["vaiprafrente"] . "-frente<br>";
@@ -9,11 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $idp = $_SESSION["idp"];
     print $idu . " = idu<br>";
     $q = $_POST["q"];
-    print "<br>" . $_POST['q'] . "<br>";
+    print "<br> q= " . $_POST['q'] . "<br>"; //die();
     $resp = $_POST[$q];
+    if (!isset($_POST[$q])) {
+        echo 'Faltou responder!!!!!';
+    }
+    print "resposta: " . $_POST[$q] . "<br>";
     $just = $_POST["just"];
-   
-    
+
+
     $data = date("Y-m-d");
 
     $sql = "SELECT * FROM respostas WHERE idp=" . $idp .
@@ -33,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         $sql = "INSERT INTO `respostas` (`idp`, `idq`, `resp`, `just`) VALUES " .
                 "(" . $idp . ", " . $q . ", " . $resp . ", '" . $just . "')";
-        print $sql; //die();
+        print $sql;
+        die();
     }
     /* $resResp = */
     mysql_query($sql);
@@ -54,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
         //echo $sql;
     }
-    
+
     $url = "Location: index.php?r=form&q=" . $pag;
     header($url);
 }
