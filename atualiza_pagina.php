@@ -39,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $sql = "INSERT INTO `respostas` (`idp`, `idq`, `resp`, `just`) VALUES " .
                 "(" . $idp . ", " . $q . ", " . $resp . ", '" . $just . "')";
         print $sql;
-        die();
     }
     /* $resResp = */
     mysql_query($sql);
