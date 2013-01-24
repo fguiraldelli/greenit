@@ -84,11 +84,24 @@ function validaForm(){
 
 }
 
-function mudaPagina(retorno){
+function mudaPagina(retorno, nome){
+    //Verifica se foi selecionado alguma radio
+    var flag = false;
+    radio = document.getElementsByName(nome);
+    for(var i=0; i < radio.length;i++){
+        if(radio[i].checked){
+        flag = true;
+        }
+    }
+    if(flag == false){
+        alert("Você deve selecionar alguma opção.");
+        return false;
+    }else{
     document.getElementById('vaiprafrente').value = retorno;
     document.getElementById("form2").action = "atualiza_pagina.php";
     document.getElementById("form2").submit();
-    return false;        
+    return false;
+    }
 }
 function iniciaQuest(){
     document.getElementById("form2").action = "novo_projeto.php";

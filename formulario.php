@@ -42,17 +42,17 @@ if ($q > 0)
             echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
             echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
             echo "<input type=hidden name=\"q\" value=" . $q . " />";
-            
+
             echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
-            
+
             echo "<br /><label>Nome do Projeto<br /></label>";
             echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50/>";
             echo "<br /><br /><label>Descrição do Projeto<br /></label>";
             echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8></textarea>";
-            
+
             $sql_tec = "select * from tecnologia";
             $tecnologias = mysql_query($sql_tec);
-            
+
             echo "<br /><br /><label>Tecnologias utilizadas<br /></label>";
             echo "<select>";
             while ($row = mysql_fetch_array($tecnologias)) {
@@ -64,7 +64,6 @@ if ($q > 0)
             echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/>";
             echo "<br /><br /><label>Descrição da Tecnologia<br /></label>";
             echo "<textarea id='descr-tec' cols=60 rows=4></textarea>";
-            
         } else {
 
             while ($row = mysql_fetch_array($res)) {
@@ -75,10 +74,10 @@ if ($q > 0)
 
                 /* echo "<div class = \"question-form\"><p>Questão " .
                   $q . " de " . $MAX[0] . "</p></div>"; */
-                
+
                 // Mostra qual projeto esta sendo analizado
                 echo "<div class =\"question-form\"><h1>" . $_SESSION['titulopj'] . "</h1></div><br>";
-                
+
                 // Para separar as questoes relacionadas com sustentabilidade das questoes de fatores de sucesso para o negócio
                 if ($q < 9) {
                     echo "<div class = \"question-form\"><p>1ª Parte: Fatores de Sucesso para o negócio</p></div><hr />";
@@ -103,14 +102,17 @@ if ($q > 0)
                 echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
 
                 print $rowresp['resp'];
-               
+
                 /* Recupera as possiveis respostas */
                 $sql = "SELECT * FROM tipo_resposta WHERE tipo = " . $row['tipo'];
-                
+
                 $resresp = mysql_query($sql);
                 echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
+                $radio = $row['id'];
+                //print "radio nome= ".$radio;
                 while ($rowresp = mysql_fetch_array($resresp)) {
-                    echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
+                    echo "<input class = radio type=\"radio\" id=\"resp_radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
+                    //echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
                     if ($resp[2] == $rowresp['resp']) {
                         echo 'checked';
                     }
@@ -123,21 +125,23 @@ if ($q > 0)
                 <label>Se quiser justifique abaixo a sua resposta:</label><br>
                 <textarea name="just"  id="mensagem" cols="60" rows="8" maxlength="700"><?php echo $resp[3]; ?></textarea>
             </p>
-        <?php } //fim if  ?>
+        <?php } //fim if   ?>
         <table>
             <tr>
                 <td>
-                    <?php if ($q > 0) { ?>
-                        <input class ="button" name="back" type="button" value="<< Anterior" onclick="mudaPagina('a');"/>
-                    <?php } ?>
+                    <?php
+                    if ($q > 0) {
+                        echo '<input class="button" name="back" type="button" value="<< Anterior" onclick="mudaPagina(\'a\',\''.$radio.'\');">';
+                    }
+                    ?>
                 </td>
-                <td class="button"> </td>
+                <td class="button"></td>
                 <td>
                     <?php
                     $botao = "";
                     if ($q == 0) {
                         $botao = "Iniciar questionario";
-                    } else if ($q != $MAX[0]){
+                    } else if ($q != $MAX[0]) {
                         $botao = "Proximo >>";
                     } else {
                         $botao = "Finaliza";
@@ -147,10 +151,10 @@ if ($q > 0)
                     $js_onclick = "";
                     if (strcmp($botao, "Finaliza") == 0) {
                         $js_onclick = "finaliza('p');";
-                    } else if(strcmp($botao, "Iniciar questionario") == 0){
+                    } else if (strcmp($botao, "Iniciar questionario") == 0) {
                         $js_onclick = "iniciaQuest();";
                     } else {
-                        $js_onclick = "mudaPagina('p');";
+                        $js_onclick = "mudaPagina('p','" . $radio . "');";
                     }
                     ?>
                     <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao; ?>" onclick="<?php echo $js_onclick; ?>"/>
