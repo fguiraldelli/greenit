@@ -427,9 +427,23 @@ a.medium-button{
    -webkit-border-radius: 15px;
    display:block;
 }
-
+a.medium-button2{
+    text-decoration: none;
+    background: #66b400;
+    color: white;
+    font-size: 15px;
+    padding: 15px;
+   -webkit-border-radius: 15px;
+   display:inline;
+}
 
 a.medium-button:hover{
+    text-decoration: none;
+    background: #339900;
+    padding: 15px;
+   -webkit-border-radius: 10px;
+}
+a.medium-button2:hover{
     text-decoration: none;
     background: #339900;
     padding: 15px;

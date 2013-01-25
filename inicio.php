@@ -13,7 +13,8 @@
             <input type="submit" value="Fazer login" /><br>
             <span class="style1"><br />* Campos com * são obrigatórios!</span>
         </form>
-
+        <br><br>
+<a href="index.php?r=cadastro" class="big-button">Cadastre-se aqui!</a>
     </div>
     <div class="col-direita">
         <p class="titulo"> Pesquisa de Mercado </p>
