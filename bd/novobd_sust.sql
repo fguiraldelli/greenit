@@ -117,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `titulo` varchar(100) NOT NULL,
   `descr` varchar(700) NOT NULL,
   `data` date NOT NULL,
+  `confidencial` tinyint(1) NOT NULL,
   PRIMARY KEY (`idp`,`idu`),
   KEY `idu` (`idu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
