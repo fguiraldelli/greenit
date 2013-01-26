@@ -35,11 +35,14 @@
                 case "projeto":
                     include("projeto.php");
                     break;
-                case "busca":
-                    include("busca.php");
+                case "pesquisa_projeto":
+                    include("pesquisa_projeto.php");
+                    break;
+                case "pesquisa_tecnologia":
+                    include("busca_tecnologia.php");
                     break;
 				case "resbusca":
-					include("resultadobusca.php");
+					include("resultado_busca_tecnologia.php");
 					break;
                 default : include("inicio.php");
             }

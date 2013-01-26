@@ -3,13 +3,8 @@
 </div>
 
 <?php
-    $tipo = $_GET["tipo"];
-    echo "<form name=\"busca\" method=\"post\" action=\"index.php?r=resbusca&tipo=" . $tipo . "\">";
-        if (strcmp($tipo, "tec") == 0) {
-            echo "<label>Nome da tecnologia:</label>";
-        } else {
-            echo "<label>Nome do projeto:</label>";
-        }
+    echo "<form name=\"busca\" method=\"post\" action=\"index.php?r=resbusca\">";
+    echo "<label>Nome da tecnologia:</label>";
     echo "<br /><input name=\"nome\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\" />";
     echo "<br /><br />";
     
