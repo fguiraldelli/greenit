@@ -19,16 +19,16 @@ if ($q > 0)
         else if (($q > 28))
             header("location: index.php?r=tabela");
         $idu = $_SESSION["idu"];
-        print "idu: ".$idu.'<br>';
+        //print "idu: ".$idu.'<br>';
         $idp = $_SESSION["idp"];
-        print "idu: ".$idp.'<br>';
+        //print "idu: ".$idp.'<br>';
         $sql = "SELECT * FROM respostas where idp=" . $idp . " AND 
                         idq = " . $q;
         $caresp = mysql_query($sql);
         $resp = mysql_fetch_array($caresp);
-        print "resp[1]: ".$resp[1].'<br>';
-        print "resp[2]: ".$resp[2].'<br>';
-        print "resp[3]: ".$resp[3].'<br>';
+        //print "resp[1]: ".$resp[1].'<br>';
+        //print "resp[2]: ".$resp[2].'<br>';
+        //print "resp[3]: ".$resp[3].'<br>';
         // define as strings de consulta SQL
         $sql = "SELECT * FROM questoes where id = " . $q;
         $num_question = "SELECT count(*) FROM questoes";
@@ -53,6 +53,8 @@ if ($q > 0)
             echo "<br /><label>Nome do Projeto <span class=\"style1\">*</span></label><br>";
             echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50 
                 onkeyup=\"validaNomeProjeto(this.id,this.value)\"/>";
+            echo "<input type = \"checkbox\" id = \"confidencial \"name = \"confidencial\" 
+                value = \"\" />Confidencial";
             echo "<br /><br /><label>Descrição do Projeto <span class=\"style1\">*</span></label><br>";
             echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8 
                 onkeyup=\"validaDescProjeto(this.id,this.value)\"></textarea>";
