@@ -33,6 +33,7 @@ session_start();
                         <a href="index.php?r=contato">Contato</a>
                     </li>
 
+
                     <li <?php if ($_GET['r'] == 'projeto') echo "class=\"active\"" ?> >
                         <?php if ($_SESSION["AUTH"] == true) {
                             echo '<a href="index.php?r=projeto">Projetos</a>';
