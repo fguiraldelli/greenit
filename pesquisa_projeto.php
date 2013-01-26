@@ -47,7 +47,7 @@ $idu = $_SESSION["idu"];
         /* Altera os espaços adicionando no lugar o simbolo % */
         //echo $_SESSION["busca_proj"];
         if($_SESSION["busca_proj"] != ''){
-            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%".$_SESSION["busca_proj"]."%' AND confidencial=0 ORDER BY titulo";
+            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%".$_SESSION["busca_proj"]."%' ORDER BY titulo";
 
             // Executa a query no Banco de Dados
             $sql = mysql_query($qr);

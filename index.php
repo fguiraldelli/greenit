@@ -41,10 +41,7 @@
                 case "pesquisa_tecnologia":
                     include("busca_tecnologia.php");
                     break;
-				case "resbusca":
-					include("resultado_busca_tecnologia.php");
-					break;
-                default : include("inicio.php");
+				default : include("inicio.php");
             }
             ?>
         </div>
