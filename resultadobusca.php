@@ -14,7 +14,7 @@ if (!$linhas) {
     echo "<b>Foram encontradas " . $linhas . " tecnologia(s) com o nome '" . $nome . "'</b><br /><br />"; 
     while ($row = mysql_fetch_array($result)) {
         echo "Nome: " . $row['nome'] . "<br />";
-        //echo "Descrição: " . $row['desc'] . "<br /><br /><br />";
+        echo "Descrição: " . $row['descricao'] . "<br /><br /><br />";
     }
 }
 ?>

@@ -184,6 +184,7 @@ CREATE TABLE IF NOT EXISTS `respostas` (
 CREATE TABLE IF NOT EXISTS `tecnologia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
+  `descricao` varchar(700) DEFAULT NULL,
   `confidencial` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
@@ -193,9 +194,9 @@ CREATE TABLE IF NOT EXISTS `tecnologia` (
 -- Extraindo dados da tabela `tecnologia`
 --
 
-INSERT INTO `tecnologia` (`id`, `nome`, `confidencial`) VALUES
-(1, 'teste', 1),
-(2, 'teste2', 0);
+INSERT INTO `tecnologia` (`id`, `nome`, `descricao`, `confidencial`) VALUES
+(1, 'teste', NULL, 1),
+(2, 'teste2', NULL, 0);
 
 -- --------------------------------------------------------
 
