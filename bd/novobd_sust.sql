@@ -19,18 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de Dados: `sust`
 --
--- Apaga Tabelas se existem
---
-DROP TABLE IF EXISTS `just-matriz`;
-DROP TABLE IF EXISTS `matriz`;
-DROP TABLE IF EXISTS `proj-tec`;
-DROP TABLE IF EXISTS `respostas`;
-DROP TABLE IF EXISTS `tecnologia`;
-DROP TABLE IF EXISTS `tipo_resposta`;
-DROP TABLE IF EXISTS `projeto`;
-DROP TABLE IF EXISTS `questoes`;
-DROP TABLE IF EXISTS `usuario`;
+
 -- --------------------------------------------------------
+
 --
 -- Estrutura da tabela `just-matriz`
 --
@@ -193,9 +184,18 @@ CREATE TABLE IF NOT EXISTS `respostas` (
 CREATE TABLE IF NOT EXISTS `tecnologia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
+  `confidencial` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `tecnologia`
+--
+
+INSERT INTO `tecnologia` (`id`, `nome`, `confidencial`) VALUES
+(1, 'teste', 1),
+(2, 'teste2', 0);
 
 -- --------------------------------------------------------
 
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -245,7 +245,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`id`, `nome`, `empresa`, `email`, `senha`) VALUES
 (1, 'admin', 'greenitconsultoria', 'admin@greenitconsultoria.com', '21232f297a57a5a743894a0e4a801fc3'),
 (2, 'nahim', 'Do Nahim', 'nahim@nahim.com', 'fcea920f7412b5da7be0cf42b8c93759'),
-(3, 'Nahim Alves de Souza', 'Ufscar', 'nahimsouza@yahoo.com.br', 'fcea920f7412b5da7be0cf42b8c93759');
+(3, 'Nahim Alves de Souza', 'Ufscar', 'nahimsouza@yahoo.com.br', 'fcea920f7412b5da7be0cf42b8c93759'),
+(4, 'Guilherme Marques Alonso', 'UFSCar', 'guilherme.malonso@gmail.com', 'aa1bf4646de67fd9086cf6c79007026c');
 
 --
 -- Restrições para as tabelas dumpadas
