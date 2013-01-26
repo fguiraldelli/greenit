@@ -30,7 +30,7 @@ $idu = $_SESSION["idu"];
     </div>
     <div class="col-direita2">
         <?php
-        echo "<form id = \"formbusca\" action=\"atualiza_busca_projeto.php\" method=\"POST\">";
+        echo "<form id = \"formbusca\" action=\"atualiza_busca_tecnologia.php\" method=\"POST\">";
         echo "<label class=\"cadastro\">Nome da tecnologia que deseja buscar:</label><br>
             ";
         echo "<input name=\"busca_proj\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\"/>";
@@ -85,6 +85,7 @@ $idu = $_SESSION["idu"];
                     Editar Avaliação </a></td>";
                 echo "</tr>";
             }
+            $_SESSION["busca_proj"] = '';
             ?>
         </table>
         <br /><br />

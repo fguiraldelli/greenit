@@ -30,25 +30,25 @@ $idu = $_SESSION["idu"];
     </div>
     <div class="col-direita2">
         <?php
-            echo "<form id = \"formbusca\" action=\"atualiza_busca_projeto.php\" method=\"POST\">";
-            echo "<label class=\"cadastro\">Nome do projeto que deseja buscar:</label><br>
+        echo "<form id = \"formbusca\" action=\"atualiza_busca_projeto.php\" method=\"POST\">";
+        echo "<label class=\"cadastro\">Nome do projeto que deseja buscar:</label><br>
             ";
-            echo "<input name=\"busca_proj\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\"/>";
-            echo "<br /><br />";
-            echo "<p><input name=\"buscar\" type=\"submit\" id=\"buscar\" value=\"Buscar\" /><br><br></p>";
-            echo "</form>";
+        echo "<input name=\"busca_proj\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\"/>";
+        echo "<br /><br />";
+        echo "<p><input name=\"buscar\" type=\"submit\" id=\"buscar\" value=\"Buscar\" /><br><br></p>";
+        echo "</form>";
 
-            $sql = "select * from projeto where idu = " . $idu;
-            echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
-            echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
-            echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
-            echo "<input type=hidden name=projeto id=projeto />";
+        $sql = "select * from projeto where idu = " . $idu;
+        echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
+        echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
+        echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
+        echo "<input type=hidden name=projeto id=projeto />";
 
 
         /* Altera os espaços adicionando no lugar o simbolo % */
         //echo $_SESSION["busca_proj"];
-        if($_SESSION["busca_proj"] != ''){
-            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%".$_SESSION["busca_proj"]."%' ORDER BY titulo";
+        if ($_SESSION["busca_proj"] != '') {
+            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%" . $_SESSION["busca_proj"] . "%' ORDER BY titulo";
 
             // Executa a query no Banco de Dados
             $sql = mysql_query($qr);
@@ -63,7 +63,7 @@ $idu = $_SESSION["idu"];
         ?>
 
         <table class="projeto">
-        <?php
+            <?php
             while ($row = mysql_fetch_array($sql)) {
                 echo "<tr>";
                 echo "<td class=\"proj\">" . $row['titulo'] . "</td> ";
@@ -77,8 +77,8 @@ $idu = $_SESSION["idu"];
                     Editar Avaliação </a></td>";
                 echo "</tr>";
             }
-
-        ?>
+            $_SESSION["busca_proj"] = '';
+            ?>
         </table>
         <br /><br />
     </div>
