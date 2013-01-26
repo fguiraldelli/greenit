@@ -129,10 +129,10 @@ function iniciaQuest(){
         return false; 
     }
 }
-function loadMatrix(retorno, tipo){
-    document.getElementById('nome-proj').value = retorno;
+function loadMatrix(projeto, nomeProjeto, tipo){
+    document.getElementById('nome-proj').value = nomeProjeto;
+    document.getElementById('projeto').value = projeto;
     document.getElementById('tipo').value = tipo;
-    //document.getElementById("form3").action = "atualiza_matriz.php";
     document.getElementById("form3").submit();
     return false;        
 }

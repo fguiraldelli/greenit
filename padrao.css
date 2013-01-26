@@ -110,7 +110,7 @@ div.conteudo{
     /*margin-top: 1px;*/
     position: relative;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     min-height: 600px;
     /*margin: 10px 20px;*/  
     font-size: 14px;
@@ -121,14 +121,16 @@ div.conteudo-form{
     /*margin-top: 1px;*/
     position: relative;
     background-color: #ffffff;
-    padding: 10px;
+    /*padding: 10px;*/
     padding-left: 70px;
     padding-right: 70px;
     /*margin: 10px 20px;*/  
-    min-height: 500px;
+    /*min-height: 500px;*/
+    height: 480px;
     font-size: 14px;
     /*text-align: center;*/
 }
+
 div.conteudo-form input.radio
 {
     width: 30px;
@@ -173,14 +175,14 @@ div.breadcrumbs
 {
     font-size: 10px;
     /*padding: 5px 20px;*/
-    height: 25px;
+    height: 15px;
 }
 div.breadcrumbs-form
 {
     text-align: left;
     font-size: 10px;
     /*padding: 5px 20px;*/
-    height: 25px;
+    height: 15px;
 }
 
 div.breadcrumbs span
@@ -498,3 +500,26 @@ a.small-button:hover{
    -webkit-border-radius: 10px;
 }
 
+div.justificativa{
+    /*margin-top: 1px;*/
+    position: relative;
+    height: 220px;
+    /*font-size: 14px;*/
+    /*text-align: center;*/
+}
+
+div.pergunta{
+    /*margin-top: 1px;*/
+    position: relative;
+    height: 60px;
+    /*font-size: 14px;*/
+    /*text-align: center;*/
+}
+
+div.radio{
+    /*margin-top: 1px;*/
+    position: relative;
+    height: 80px;
+    /*font-size: 14px;*/
+    /*text-align: center;*/
+}
