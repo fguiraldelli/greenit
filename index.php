@@ -35,6 +35,12 @@
                 case "projeto":
                     include("projeto.php");
                     break;
+                case "busca":
+                    include("busca.php");
+                    break;
+				case "resbusca":
+					include("resultadobusca.php");
+					break;
                 default : include("inicio.php");
             }
             ?>
