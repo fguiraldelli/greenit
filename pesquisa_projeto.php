@@ -30,10 +30,6 @@ $idu = $_SESSION["idu"];
     </div>
     <div class="col-direita2">
         <?php
-            echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
-            echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
-            echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
-
             echo "<form id = \"formbusca\" action=\"atualiza_busca_projeto.php\" method=\"POST\">";
             echo "<label class=\"cadastro\">Digite o nome do projeto que deseja buscar</label><br>
             ";
@@ -43,6 +39,9 @@ $idu = $_SESSION["idu"];
             echo "</form>";
 
             $sql = "select * from projeto where idu = " . $idu;
+            echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
+            echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
+            echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
 
 
         /* Altera os espaços adicionando no lugar o simbolo % */
