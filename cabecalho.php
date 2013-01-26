@@ -7,6 +7,7 @@ session_start();
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="padrao.css">
         <script src="javascript.js"></script>
+        <title>Green IT Consultoria</title>
     </head>
     <body>
 

@@ -17,10 +17,10 @@ $idu = $_SESSION["idu"];
         <a href="index.php?r=projeto" class="medium-button">
             Voltar</a>
         <br />
-        <a href="index.php?r=pesquisar_projeto" class="medium-button">
+        <a href="index.php?r=pesquisa_projeto" class="medium-button">
             Pesquisar Projetos </a>
         <br />
-        <a href="#" class="medium-button">
+        <a href="index.php?r=pesquisa_tecnologia" class="medium-button">
             Pesquisar Tecnologia </a>
 
 
@@ -31,11 +31,11 @@ $idu = $_SESSION["idu"];
     <div class="col-direita2">
         <?php
             echo "<form id = \"formbusca\" action=\"atualiza_busca_projeto.php\" method=\"POST\">";
-            echo "<label class=\"cadastro\">Digite o nome do projeto que deseja buscar</label><br>
+            echo "<label class=\"cadastro\">Nome do projeto que deseja buscar:</label><br>
             ";
-            echo "<input name=\"busca_proj\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\"/>
-            ";
-            echo "<input name=\"buscar\" type=\"submit\" id=\"buscar\" value=\"Buscar\" /><br><br></p>";
+            echo "<input name=\"busca_proj\" type=\"text\" id=\"nome\" size=\"70\" maxlength=\"60\"/>";
+            echo "<br /><br />";
+            echo "<p><input name=\"buscar\" type=\"submit\" id=\"buscar\" value=\"Buscar\" /><br><br></p>";
             echo "</form>";
 
             $sql = "select * from projeto where idu = " . $idu;
@@ -47,7 +47,7 @@ $idu = $_SESSION["idu"];
         /* Altera os espaços adicionando no lugar o simbolo % */
         //echo $_SESSION["busca_proj"];
         if($_SESSION["busca_proj"] != ''){
-            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%".$_SESSION["busca_proj"]."%' ORDER BY titulo";
+            $qr = "SELECT * FROM projeto WHERE titulo LIKE '%".$_SESSION["busca_proj"]."%' AND confidencial=0 ORDER BY titulo";
 
             // Executa a query no Banco de Dados
             $sql = mysql_query($qr);
