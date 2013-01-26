@@ -19,6 +19,29 @@ SET time_zone = "+00:00";
 --
 -- Banco de Dados: `sust`
 --
+-- Apaga Tabelas se existem
+--
+DROP TABLE IF EXISTS `just-matriz`;
+DROP TABLE IF EXISTS `matriz`;
+DROP TABLE IF EXISTS `proj-tec`;
+DROP TABLE IF EXISTS `respostas`;
+DROP TABLE IF EXISTS `tecnologia`;
+DROP TABLE IF EXISTS `tipo_resposta`;
+DROP TABLE IF EXISTS `projeto`;
+DROP TABLE IF EXISTS `questoes`;
+DROP TABLE IF EXISTS `usuario`;
+-- --------------------------------------------------------
+--
+-- Estrutura da tabela `just-matriz`
+--
+
+CREATE TABLE IF NOT EXISTS `just-matriz` (
+  `idm` int(11) NOT NULL,
+  `idp` int(11) NOT NULL,
+  `comentario` varchar(700) NOT NULL,
+  PRIMARY KEY (`idm`,`idp`),
+  KEY `idp` (`idp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -31,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `matriz` (
   `conteudo` varchar(300) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Extraindo dados da tabela `matriz`
@@ -66,6 +89,38 @@ INSERT INTO `matriz` (`id`, `conteudo`) VALUES
 (26, 'Cumprimento a princípio(s) de responsabilidade empresarial e/ou cidadania corporativa'),
 (27, 'Promoção de desenvolvimento socioeconômico regional'),
 (28, 'Promoção de desenvolvimento e capacitação de recursos humanos');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `proj-tec`
+--
+
+CREATE TABLE IF NOT EXISTS `proj-tec` (
+  `idp` int(11) NOT NULL,
+  `idt` int(11) NOT NULL,
+  `descricao` varchar(700) NOT NULL,
+  `confidencial` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idp`,`idt`),
+  KEY `idt` (`idt`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `projeto`
+--
+
+CREATE TABLE IF NOT EXISTS `projeto` (
+  `idp` int(11) NOT NULL AUTO_INCREMENT,
+  `idu` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `descr` varchar(700) NOT NULL,
+  `data` date NOT NULL,
+  `confidencial` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idp`,`idu`),
+  KEY `idu` (`idu`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -121,14 +176,26 @@ INSERT INTO `questoes` (`id`, `questao`, `tipo`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `respostas` (
-  `idu` int(11) NOT NULL,
+  `idp` int(11) NOT NULL,
   `idq` int(11) NOT NULL,
   `resp` int(11) NOT NULL,
   `just` text,
-  `data` date NOT NULL,
-  PRIMARY KEY (`idu`,`idq`),
+  PRIMARY KEY (`idp`,`idq`),
   KEY `idq` (`idq`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tecnologia`
+--
+
+CREATE TABLE IF NOT EXISTS `tecnologia` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -147,13 +214,13 @@ CREATE TABLE IF NOT EXISTS `tipo_resposta` (
 --
 
 INSERT INTO `tipo_resposta` (`tipo`, `rotulo`, `resp`) VALUES
-(1, 'Não', 0),
-(1, 'Talvez - Incerto - Parcialmente\n', 1),
-(1, 'Sim - Plenamente', 2),
 (2, 'Pelo contrário, acarreta impacto negativo sobre o aspecto', -1),
 (2, 'Não', 0),
-(2, 'Talvez - Incerto - Parcialmente', 1),
-(2, 'Sim - Plenamente', 2);
+(2, 'Talvez - Incerto - Parcialmente\n', 1),
+(2, 'Sim - Plenamente', 2),
+(1, 'Sim - Plenamente', 2),
+(1, 'Talvez - Incerto - Parcialmente', 1),
+(1, 'Não', 0);
 
 -- --------------------------------------------------------
 
@@ -169,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -183,10 +250,29 @@ INSERT INTO `usuario` (`id`, `nome`, `empresa`, `email`, `senha`) VALUES
 --
 
 --
+-- Restrições para a tabela `just-matriz`
+--
+ALTER TABLE `just-matriz`
+  ADD CONSTRAINT `just@002dmatriz_ibfk_1` FOREIGN KEY (`idp`) REFERENCES `projeto` (`idp`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Restrições para a tabela `proj-tec`
+--
+ALTER TABLE `proj-tec`
+  ADD CONSTRAINT `proj@002dtec_ibfk_1` FOREIGN KEY (`idp`) REFERENCES `projeto` (`idp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proj@002dtec_ibfk_2` FOREIGN KEY (`idt`) REFERENCES `tecnologia` (`id`);
+
+--
+-- Restrições para a tabela `projeto`
+--
+ALTER TABLE `projeto`
+  ADD CONSTRAINT `projeto_ibfk_1` FOREIGN KEY (`idu`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Restrições para a tabela `respostas`
 --
 ALTER TABLE `respostas`
-  ADD CONSTRAINT `respostas_ibfk_1` FOREIGN KEY (`idu`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `respostas_ibfk_1` FOREIGN KEY (`idp`) REFERENCES `projeto` (`idp`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `respostas_ibfk_2` FOREIGN KEY (`idq`) REFERENCES `questoes` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
