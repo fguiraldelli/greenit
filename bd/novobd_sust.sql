@@ -108,10 +108,16 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `titulo` varchar(100) NOT NULL,
   `descr` varchar(700) NOT NULL,
   `data` date NOT NULL,
-  `confidencial` tinyint(1) NOT NULL,
   PRIMARY KEY (`idp`,`idu`),
   KEY `idu` (`idu`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `projeto`
+--
+
+INSERT INTO `projeto` (`idp`, `idu`, `titulo`, `descr`, `data`) VALUES
+(1, 4, 'teste', 'lalalalalalala', '2013-01-26');
 
 -- --------------------------------------------------------
 
@@ -175,6 +181,40 @@ CREATE TABLE IF NOT EXISTS `respostas` (
   KEY `idq` (`idq`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `respostas`
+--
+
+INSERT INTO `respostas` (`idp`, `idq`, `resp`, `just`) VALUES
+(1, 1, 2, 'sem justificativa'),
+(1, 2, 1, 'sem justificativa'),
+(1, 3, 0, 'sem justificativa'),
+(1, 4, 1, 'sem justificativa'),
+(1, 5, 2, 'sem justificativa'),
+(1, 6, 1, 'sem justificativa'),
+(1, 7, 1, 'sem justificativa'),
+(1, 8, 2, 'sem justificativa'),
+(1, 9, 0, 'sem justificativa'),
+(1, 10, -1, 'sem justificativa'),
+(1, 11, -1, 'sem justificativa'),
+(1, 12, 0, 'sem justificativa'),
+(1, 13, 2, 'sem justificativa'),
+(1, 14, -1, 'sem justificativa'),
+(1, 15, 0, 'sem justificativa'),
+(1, 16, 0, 'sem justificativa'),
+(1, 17, -1, 'sem justificativa'),
+(1, 18, 0, 'sem justificativa'),
+(1, 19, -1, 'sem justificativa'),
+(1, 20, 0, 'sem justificativa'),
+(1, 21, 1, 'sem justificativa'),
+(1, 22, 2, 'sem justificativa'),
+(1, 23, 0, 'sem justificativa'),
+(1, 24, 1, 'sem justificativa'),
+(1, 25, 2, 'sem justificativa'),
+(1, 26, 2, 'sem justificativa'),
+(1, 27, 0, 'sem justificativa'),
+(1, 28, 1, 'sem justificativa');
+
 -- --------------------------------------------------------
 
 --
@@ -184,19 +224,18 @@ CREATE TABLE IF NOT EXISTS `respostas` (
 CREATE TABLE IF NOT EXISTS `tecnologia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
-  `descricao` varchar(700) DEFAULT NULL,
-  `confidencial` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `tecnologia`
 --
 
-INSERT INTO `tecnologia` (`id`, `nome`, `descricao`, `confidencial`) VALUES
-(1, 'teste', NULL, 1),
-(2, 'teste2', NULL, 0);
+INSERT INTO `tecnologia` (`id`, `nome`) VALUES
+(1, 'teste'),
+(2, 'teste2'),
+(3, 'teste3');
 
 -- --------------------------------------------------------
 
