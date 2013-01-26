@@ -28,6 +28,18 @@ function validaEmpresa(id,nome){
     return verifica(id,nome,regex);
 }
 
+function validaNomeProjeto(id,nome){
+    
+    var regex = /^[a-zA-Z-0-9- ]+$/;
+    return verifica(id,nome,regex);
+}
+
+function validaDescProjeto(id,nome){
+    
+    var regex = /^[A-Za-zÀ-ú0-9 \-]+$/;
+    return verifica(id,nome,regex);
+}
+
 function validaEmail(id,email){
     var regex  = /^[\w-]+(\.[\w-]+)*@(([\w-]{2,63}\.)+[A-Za-z]{2,6}|\[\d{1,3}(\.\d{1,3}){3}\])$/;
     return verifica(id,email,regex);
@@ -79,7 +91,6 @@ function validaForm(){
         return false;
     }
 
-
     return true;
 
 }
@@ -90,23 +101,33 @@ function mudaPagina(retorno, nome){
     radio = document.getElementsByName(nome);
     for(var i=0; i < radio.length;i++){
         if(radio[i].checked){
-        flag = true;
+            flag = true;
         }
     }
     if(flag == false){
         alert("Você deve selecionar alguma opção.");
         return false;
     }else{
-    document.getElementById('vaiprafrente').value = retorno;
-    document.getElementById("form2").action = "atualiza_pagina.php";
-    document.getElementById("form2").submit();
-    return false;
+        document.getElementById('vaiprafrente').value = retorno;
+        document.getElementById("form2").action = "atualiza_pagina.php";
+        document.getElementById("form2").submit();
+        return false;
     }
 }
 function iniciaQuest(){
-    document.getElementById("form2").action = "novo_projeto.php";
-    document.getElementById("form2").submit();
-    return false; 
+    if (!validaNomeProjeto("nome-proj",document.getElementById("nome-proj").value)) {
+        alert("Preencha o nome do Projeto corretamente");
+        return false;
+    }
+    if (!validaDescProjeto("descr-proj",document.getElementById("descr-proj").value)) {
+        alert("Preencha a descrição do projeto corretamente");
+        return false;
+    }
+    else{
+        document.getElementById("form2").action = "novo_projeto.php";
+        document.getElementById("form2").submit();
+        return false; 
+    }
 }
 function loadMatrix(retorno, tipo){
     document.getElementById('nome-proj').value = retorno;
@@ -116,10 +137,10 @@ function loadMatrix(retorno, tipo){
     return false;        
 }
 
-function finaliza(retorno){
+function finaliza(retorno, nome){
     var confirmaFim = confirm("Tem certeza que deseja finalizar?");
     if (confirmaFim == true){
-        mudaPagina(retorno);
+        mudaPagina(retorno,nome);
     }
 }
 

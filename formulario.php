@@ -19,11 +19,16 @@ if ($q > 0)
         else if (($q > 28))
             header("location: index.php?r=tabela");
         $idu = $_SESSION["idu"];
+        print "idu: ".$idu.'<br>';
         $idp = $_SESSION["idp"];
+        print "idu: ".$idp.'<br>';
         $sql = "SELECT * FROM respostas where idp=" . $idp . " AND 
                         idq = " . $q;
         $caresp = mysql_query($sql);
         $resp = mysql_fetch_array($caresp);
+        print "resp[1]: ".$resp[1].'<br>';
+        print "resp[2]: ".$resp[2].'<br>';
+        print "resp[3]: ".$resp[3].'<br>';
         // define as strings de consulta SQL
         $sql = "SELECT * FROM questoes where id = " . $q;
         $num_question = "SELECT count(*) FROM questoes";
@@ -45,10 +50,12 @@ if ($q > 0)
 
             echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
 
-            echo "<br /><label>Nome do Projeto<br /></label>";
-            echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50/>";
-            echo "<br /><br /><label>Descrição do Projeto<br /></label>";
-            echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8></textarea>";
+            echo "<br /><label>Nome do Projeto <span class=\"style1\">*</span></label><br>";
+            echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50 
+                onkeyup=\"validaNomeProjeto(this.id,this.value)\"/>";
+            echo "<br /><br /><label>Descrição do Projeto <span class=\"style1\">*</span></label><br>";
+            echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8 
+                onkeyup=\"validaDescProjeto(this.id,this.value)\"></textarea>";
 
             $sql_tec = "select * from tecnologia";
             $tecnologias = mysql_query($sql_tec);
@@ -113,6 +120,8 @@ if ($q > 0)
                 while ($rowresp = mysql_fetch_array($resresp)) {
                     echo "<input class = radio type=\"radio\" id=\"resp_radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
                     //echo "<input class = radio type=\"radio\" name=\"" . $row['id'] . "\" value=\"" . $rowresp['resp'] . "\"";
+                    //print "resp[2]: ".$resp[2]."<br>";
+                    //print "rowresp['resp']: ".$rowresp['resp']."<br>";
                     if ($resp[2] == $rowresp['resp']) {
                         echo 'checked';
                     }
@@ -130,7 +139,7 @@ if ($q > 0)
             <tr>
                 <td>
                     <?php
-                    if ($q > 0) {
+                    if ($q > 1) {
                         echo '<input class="button" name="back" type="button" value="<< Anterior" onclick="mudaPagina(\'a\',\''.$radio.'\');">';
                     }
                     ?>
@@ -150,17 +159,23 @@ if ($q > 0)
                     <?php
                     $js_onclick = "";
                     if (strcmp($botao, "Finaliza") == 0) {
-                        $js_onclick = "finaliza('p');";
+                        $js_onclick = "finaliza('p','" . $radio . "');";
                     } else if (strcmp($botao, "Iniciar questionario") == 0) {
                         $js_onclick = "iniciaQuest();";
                     } else {
                         $js_onclick = "mudaPagina('p','" . $radio . "');";
                     }
                     ?>
-                    <input class = "button_prox" name = "next" type = "button" value = "<?php echo $botao; ?>" onclick="<?php echo $js_onclick; ?>"/>
+                    <input class = "button_prox" name = "next" type = "button" 
+                           value = "<?php echo $botao; ?>" onclick="<?php 
+                           echo $js_onclick; ?>"/>
                 </td>
             </tr>
         </table>
+            <?php
+            if($q == 0){
+            echo "<br><span class=\"style1\"><br />* Campos com * são obrigatórios!</span>";
+            }?>
         </form> <!-- fecha o form que foi aberto no codigo php -->
 
     </div>

@@ -99,7 +99,7 @@
             poderá auxiliá-lo a tomar decisões sobre o projeto.
         </p>
         <br /><br />
-        <a href="#" class="big-button"> Avalie seu Projeto </a>
+        <a href="index.php?r=projeto" class="big-button"> Avalie seu Projeto </a>
     </div>
     <div class="col-direita">
         <p class="titulo"> Pesquisa de Mercado </p>
