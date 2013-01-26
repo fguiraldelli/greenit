@@ -42,6 +42,7 @@ $idu = $_SESSION["idu"];
             echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
             echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
             echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
+            echo "<input type=hidden name=projeto id=projeto />";
 
 
         /* Altera os espaços adicionando no lugar o simbolo % */
@@ -67,9 +68,11 @@ $idu = $_SESSION["idu"];
                 echo "<tr>";
                 echo "<td class=\"proj\">" . $row['titulo'] . "</td> ";
 
-                echo "<td class=\"button\"><a href\"#\" onclick=\"loadMatrix('" . $row['titulo'] . "', 0);\"
+                echo "<td class=\"button\"><a href\"#\" 
+                    onclick=\"loadMatrix('" . $row['idp'] . "','" . $row['titulo'] . "', 0);\"
                     class=\"small-button\"> Ver Matriz </a></td>";
-                echo "<td><a href\"#\" onclick=\"loadMatrix('" . $row['titulo'] . "', 1);\"
+                echo "<td><a href\"#\" 
+                    onclick=\"loadMatrix('" . $row['idp'] . "','" . $row['titulo'] . "', 1);\"
                     class=\"small-button\">
                     Editar Avaliação </a></td>";
                 echo "</tr>";
