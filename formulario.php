@@ -42,36 +42,7 @@ if ($q > 0)
 
 
     if ($q == 0) {
-        /* Abre o formulario */
-        echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
-        echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
-        echo "<input type=hidden name=\"q\" value=" . $q . " />";
-
-        echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
-
-        echo "<br /><label>Nome do Projeto <span class=\"style1\">*</span></label><br>";
-        echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50 
-                onkeyup=\"validaNomeProjeto(this.id,this.value)\"/>";
-        echo "<input type = \"checkbox\" id = \"confidencial \"name = \"confidencial\" 
-                value = \"\" />Confidencial";
-        echo "<br /><br /><label>Descrição do Projeto <span class=\"style1\">*</span></label><br>";
-        echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=8 
-                onkeyup=\"validaDescProjeto(this.id,this.value)\"></textarea>";
-
-        $sql_tec = "select * from tecnologia";
-        $tecnologias = mysql_query($sql_tec);
-
-        echo "<br /><br /><label>Tecnologias utilizadas<br /></label>";
-        echo "<select>";
-        while ($row = mysql_fetch_array($tecnologias)) {
-            echo "<option>" . $row['nome'] . "</option>";
-        }
-        echo "<option>Outra...</option>";
-        echo "</select>";
-        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' />";
-        echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/>";
-        echo "<br /><br /><label>Descrição da Tecnologia<br /></label>";
-        echo "<textarea id='descr-tec' cols=60 rows=4></textarea>";
+        include("descProjeto.php");
     } else {
 
         while ($row = mysql_fetch_array($res)) {
@@ -170,9 +141,11 @@ if ($q > 0)
                 } else {
                     $js_onclick = "mudaPagina('p','" . $radio . "');";
                 }
+                if($q != 0){
                 ?>
                 <input class = "button_prox" name = "next" type = "button" 
                        value = "<?php echo $botao; ?>" onclick="<?php echo $js_onclick; ?>"/>
+                <?php } ?>
             </td>
         </tr>
     </table>
