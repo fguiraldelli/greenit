@@ -155,3 +155,8 @@ function hideDiv(id){
 function showDiv(id){
     document.getElementById(id).style.display = "";
 }
+
+function help(indx){
+    helpArray = ['','oi', 'teste'];
+    document.getElementById("ajuda").innerHTML = helpArray[indx];
+}

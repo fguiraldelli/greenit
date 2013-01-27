@@ -4,7 +4,7 @@ include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
 ?>
-
+<scrip>addLoadEvent(prepareInputsForHints);</scrip>
 <div class="conteudo">
     <div class="breadcrumbs">
         <a href="index.php">Início</a> >> <span>Projeto</span>
@@ -57,9 +57,13 @@ $idu = $_SESSION["idu"];
         echo "<option>Outra...</option>";
         echo "</select>";
         echo "<input type=button id='add-tec' value='Adicionar Tecnologia' />";
-        echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/>";
+        echo "<br /><input type=text id='nome-tec' size=50 maxlength=50 
+            onmouseover=\"help(1);\"
+            onmouseout=\"help(0);\"/>";
         echo "<br /><br /><label>Descrição da Tecnologia<br /></label>";
-        echo "<textarea id='descr-tec' cols=60 rows=4></textarea>";
+        echo "<textarea id='descr-tec' cols=60 rows=4 
+            onmouseover=\"help(2);\"
+            onmouseout=\"help(0);\"></textarea>";
         ?>   
         <table>
             <tr>
@@ -76,6 +80,9 @@ $idu = $_SESSION["idu"];
                 </td>
             </tr>
         </table>
+    </div>
+    <div id="ajuda">
+        
     </div>
 </div>
 
