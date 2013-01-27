@@ -39,6 +39,7 @@ $idu = $_SESSION["idu"];
 
         echo "<br /><label>Nome do Projeto <span class=\"style1\">*</span></label><br>";
         echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50 
+            title=\"teste\"
                 onkeyup=\"validaNomeProjeto(this.id,this.value)\"/>";
         echo "<input type = \"checkbox\" id = \"confidencial \"name = \"confidencial\" 
                 value = \"\" />Confidencial";
