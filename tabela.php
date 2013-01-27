@@ -47,12 +47,21 @@
         
         // Imprime as linhas com as cores
         for ($j = 0; $j < 8; $j++) {
+            //Recupera os comentarios da matriz
+            $neg = $j + 1;
+            $sust = $i + 1;
+            $sql = "SELECT * FROM comentario WHERE idp=" . $idp .
+                    " AND idqs=" . $sust . " AND idqn=" . $neg;
+            $result = mysql_query($sql);
+            $row = mysql_fetch_array($result);
+            $coment = $row['comentario'];
+            
             print "<td class = s" . mysql_result($result_user, $i, 2) .
                     mysql_result($result_user, $j, 2) . "> 
                     <span> <strong> Aspecto do Negócio:</strong><br /> " . mysql_result($result_user, $j, 3) ." <br /><br />
                             <strong> Aspecto de sustentabilidade:</strong><br /> " . mysql_result($result_user, $i, 3) .
                             "<br /><br /><strong> Comentário:</strong><br /><textarea id=" . $i . "c" . $j . 
-                            " rows=3; cols=20;></textarea>" .
+                            " rows=3; cols=20;>" . $coment . "</textarea>" .
                             "<input type=\"button\" value=\"Salvar\" 
                                 onclick=\"salvaComentario(" . $idp . 
                             "," . $j . "," . $i . ",'" . $i . "c" . $j . "');\" \>" .
