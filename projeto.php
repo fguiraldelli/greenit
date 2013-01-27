@@ -22,12 +22,8 @@ $idu = $_SESSION["idu"];
         <br />
         <a href="index.php?r=pesquisa_tecnologia" class="medium-button">
             Pesquisar Tecnologia </a>
-
-
-
-
-
     </div>
+    
     <div class="col-direita2">
         <table class="projeto">
             <?php
