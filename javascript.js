@@ -155,3 +155,55 @@ function hideDiv(id){
 function showDiv(id){
     document.getElementById(id).style.display = "";
 }
+
+function help(indx){
+    helpArray = ['','oi', 'teste'];
+    document.getElementById("ajuda").innerHTML = helpArray[indx];
+}
+
+/* AJAX par atualização dos comentarios da Matriz*/
+function salvaComentario(idp, x, y, str){
+    x = x + 1;
+    y = y + 1;
+
+    
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }else{// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+        //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+        teste=xmlhttp.responseText;
+        alert(teste);
+        }
+    }
+    coment = document.getElementById(str).value;
+    url = "idp=" + idp +
+    "&idqn=" + x +
+    "&idqs=" + y +
+    "&comentario=" + coment;
+    alert(coment);
+    xmlhttp.open("POST","salva_comentario.php",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(url);
+    alert("completei");
+    return false;
+}
+
+function addTec(){
+    combo = document.getElementById("other").value;
+    if (combo == "Outra..."){
+        newTec = document.getElementById("nome-tec").value;
+    }else{
+        newTec = combo;
+    }
+    lista = document.getElementById("lista_tecnologia").options;
+    lista[lista.length] = new Option (newTec, lista.length, true, true);
+}
+
+function remTec(){
+    lista = document.getElementById("lista_tecnologia");
+    lista.remove(lista.options.selectedIndex);
+}

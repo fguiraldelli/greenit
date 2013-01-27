@@ -239,6 +239,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
+-- Estrutura da tabela comentario
+--
+
+CREATE TABLE IF NOT EXISTS `comentario` (
+    idp int(11) NOT NULL,
+    idqn int NOT NULL,
+    idqs int NOT NULL,
+    comentario text,
+
+    FOREIGN KEY (idp) REFERENCES `projeto` (idp),
+    FOREIGN KEY (idqn) REFERENCES `questoes` (id),
+    FOREIGN KEY (idqs) REFERENCES `questoes` (id)
+
+);
+
+--
 -- Extraindo dados da tabela `usuario`
 --
 
@@ -278,3 +294,4 @@ ALTER TABLE `respostas`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

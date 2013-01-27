@@ -17,6 +17,12 @@
                 case "concad":
                     include ("controleCadastro.php");
                     break;
+                case 'editForm':
+                    include ("editar_dados.php");
+                    break;
+                case 'editcad':
+                    include ("editarCadastro.php");
+                    break;
                 case "login":
                     include("login.php");
                     break;

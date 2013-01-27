@@ -4,7 +4,7 @@ include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
 ?>
-
+<scrip>addLoadEvent(prepareInputsForHints);</scrip>
 <div class="conteudo">
 
     <div class="col-esquerda2">
@@ -69,8 +69,8 @@ $idu = $_SESSION["idu"];
         ?>   
         <table id="table_button">
             <tr>
-                <td class="button"></td>
-                <td class="button"></td>
+                <td class="button"><input value="add" type="button" onclick="addTec();"</td>
+                <td class="button"><input value="rem" type="button" onclick="remTec();"</td>
                 <td class="button"></td>
                 <td>
                     <?php
@@ -82,6 +82,12 @@ $idu = $_SESSION["idu"];
                 </td>
             </tr>
         </table>
+        <select id="lista_tecnologia">
+            
+        </select>
+    </div>
+    <div id="ajuda">
+        
     </div>
 </div>
 
