@@ -191,3 +191,19 @@ function salvaComentario(idp, x, y, str){
     alert("completei");
     return false;
 }
+
+function addTec(){
+    combo = document.getElementById("other").value;
+    if (combo == "Outra..."){
+        newTec = document.getElementById("nome-tec").value;
+    }else{
+        newTec = combo;
+    }
+    lista = document.getElementById("lista_tecnologia").options;
+    lista[lista.length] = new Option (newTec, lista.length, true, true);
+}
+
+function remTec(){
+    lista = document.getElementById("lista_tecnologia");
+    lista.remove(lista.options.selectedIndex);
+}

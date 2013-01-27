@@ -51,7 +51,7 @@ $idu = $_SESSION["idu"];
         $tecnologias = mysql_query($sql_tec);
 
         echo "<br /><br /><label>Tecnologias utilizadas<br /></label>";
-        echo "<select>";
+        echo "<select id=\"other\">";
         while ($row = mysql_fetch_array($tecnologias)) {
             echo "<option>" . $row['nome'] . "</option>";
         }
@@ -68,8 +68,8 @@ $idu = $_SESSION["idu"];
         ?>   
         <table>
             <tr>
-                <td class="button"></td>
-                <td class="button"></td>
+                <td class="button"><input value="add" type="button" onclick="addTec();"</td>
+                <td class="button"><input value="rem" type="button" onclick="remTec();"</td>
                 <td class="button"></td>
                 <td>
                     <?php
@@ -81,6 +81,9 @@ $idu = $_SESSION["idu"];
                 </td>
             </tr>
         </table>
+        <select id="lista_tecnologia">
+            
+        </select>
     </div>
     <div id="ajuda">
         
