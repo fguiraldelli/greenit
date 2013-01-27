@@ -50,6 +50,7 @@ session_start();
                 if ($_SESSION["AUTH"] == true) {
                     echo $_SESSION["usuario"] . " ";
                     //echo time() - $_SESSION['TIME'];
+                    echo "<a href = index.php?r=editForm>EDITAR DADOS</a>, ";
                     echo " ," . " " . "<a href = " . "logout.php" . " >SAIR</a>";
                 }
                 if (time() - $_SESSION['TIME'] > 1800) {
