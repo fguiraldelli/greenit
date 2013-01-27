@@ -27,6 +27,11 @@ $idp = $_GET["idp"];
     <div class="col-direita2">
         <p><b>Detalhes do Projeto</b></p><br /><br />
         <?php
+        echo "<form id = \"form3\" action=\"atualiza_projeto.php\" method=\"POST\">";
+        echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
+        echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
+        echo "<input type=hidden name=projeto id=projeto />";
+		
         $qpr = "SELECT * FROM projeto WHERE idp=" . $idp;
         $res = mysql_query($qpr);
         $proj = mysql_fetch_array($res);
@@ -39,10 +44,13 @@ $idp = $_GET["idp"];
         //echo "Autor: " . $usuario['nome'] . "<br />";
         echo "Criado em: " . $proj['data'] . "<br />";
         echo "Descrição: " . $proj['descr'] . "<br /><br />";
-        echo "<a href=\"#\" onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 0);\"
-                    class=\"small-button\"> Ver Matriz </a>";
-        echo " <a href=\"#\" onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 1);\"
-                    class=\"small-button\"> Editar Avaliação </a>";
+        echo "<td class=\"button\"><a href\"#\" 
+                    onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 0);\"
+                    class=\"small-button\"> Ver Matriz </a></td>";
+        echo "<td><a href\"#\" 
+                    onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 1);\"
+                    class=\"small-button\">
+                    Editar Avaliação </a></td>";
         ?>
     </div>
 </div>
