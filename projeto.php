@@ -38,7 +38,8 @@ $idu = $_SESSION["idu"];
             while ($row = mysql_fetch_array($res)) {
                 echo "<tr>";
                 echo "<td class=\"proj\">" . $row['titulo'] . "</td> ";
-
+				echo "<td class=\"button\"><a href=\"index.php?r=detalhes_projeto&idp=" . $row['idp'] . "\" 
+                    class=\"small-button\"> Detalhes do projeto </a></td>";
                 echo "<td class=\"button\"><a href\"#\" 
                     onclick=\"loadMatrix('" . $row['idp'] . "','" . $row['titulo'] . "', 0);\"
                     class=\"small-button\"> Ver Matriz </a></td>";
