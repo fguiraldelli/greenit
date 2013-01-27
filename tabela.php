@@ -4,9 +4,10 @@
 <?php
     include ("sessao.php");
     include("connection.php");
+    $idp = $_SESSION["idp"];
     $data = date("Y-m-d");
     $sql = "SELECT * FROM matriz";
-    $sql2 = "SELECT * FROM respostas WHERE idp = " . $_SESSION["idp"] /*. " AND data = '" . $data . "'"*/;
+    $sql2 = "SELECT * FROM respostas WHERE idp = " . $idp /*. " AND data = '" . $data . "'"*/;
     $result_user = mysql_query($sql2);
     $data_user = mysql_fetch_array($result_user);
     $result = mysql_query($sql);
@@ -50,7 +51,11 @@
                     mysql_result($result_user, $j, 2) . "> 
                     <span> <strong> Aspecto do Negócio:</strong><br /> " . mysql_result($result_user, $j, 3) ." <br /><br />
                             <strong> Aspecto de sustentabilidade:</strong><br /> " . mysql_result($result_user, $i, 3) .
-                            "<br /><br /><strong> Comentário:</strong><br /><textarea rows=3; cols=20;></textarea>" .
+                            "<br /><br /><strong> Comentário:</strong><br /><textarea id=" . $i . "c" . $j . 
+                            " rows=3; cols=20;></textarea>" .
+                            "<input type=\"button\" value=\"Salvar\" 
+                                onclick=\"salvaComentario(" . $idp . 
+                            "," . $j . "," . $i . ",'" . $i . "c" . $j . "');\" \>" .
                     "</span> </td>";
         }
         echo "</tr>";
