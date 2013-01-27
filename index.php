@@ -38,6 +38,9 @@
                 case "pesquisa_projeto":
                     include("pesquisa_projeto.php");
                     break;
+                case "detalhes_projeto":
+                    include("detalhes_projeto.php");
+                    break;
                 case "pesquisa_tecnologia":
                     include("busca_tecnologia.php");
                     break;
