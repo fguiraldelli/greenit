@@ -149,11 +149,5 @@ if ($q > 0)
             </td>
         </tr>
     </table>
-    <?php
-    if ($q == 0) {
-        echo "<br><span class=\"style1\"><br />* Campos com * são obrigatórios!</span>";
-    }
-    ?>
 </form> <!-- fecha o form que foi aberto no codigo php -->
-
 </div> 

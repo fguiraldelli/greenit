@@ -127,6 +127,7 @@ div.conteudo-form{
     /*margin: 10px 20px;*/  
     /*min-height: 500px;*/
     height: 480px;
+    /*height: 620px;*/
     font-size: 14px;
     /*text-align: center;*/
 }
@@ -151,7 +152,7 @@ div.conteudo-form table
     margin: auto;
     position: absolute;
     left: 10%;
-    
+
 }
 div.conteudo-form table td
 {
@@ -191,7 +192,7 @@ div.breadcrumbs span
 }
 div.rodape{
     position: relative;
-    padding: 10px;
+    padding: 20px;
     margin: 10px 20px;
     font-size: 10px;
     text-align: center;
@@ -228,7 +229,7 @@ td.s0{
 }
 
 td.s-10{
-   
+
     border: 1px solid;
     text-align: center;  
     background-color: #FFC90E;/*rgb(255,201,14)*/;/*laranja*/
@@ -317,7 +318,7 @@ table.resultado td:hover {
 table.resultado td, table.resultado td.s0, table.resultado td.legenda{
     border: 1px solid black;
     position:relative; 
-   
+
     /*
     border-bottom:2px dotted #039;
     cursor:help; 
@@ -325,7 +326,7 @@ table.resultado td, table.resultado td.s0, table.resultado td.legenda{
     
     */
     z-index:24;
-  }
+}
 
 table.resultado td span{
     display: none
@@ -370,7 +371,7 @@ div.col-direita{
     float:right;
     width: 47%;
     height: 60%;
-    
+
 }
 
 a.big-button{
@@ -379,7 +380,7 @@ a.big-button{
     color: white;
     font-size: 20px;
     padding: 20px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 
@@ -387,7 +388,7 @@ a.big-button:hover{
     text-decoration: none;
     background: #339900;
     padding: 20px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 div.col-esquerda2{
@@ -410,14 +411,14 @@ div.col-meio{
     width: 50%;
     height: 60%;
     padding-left: 20px;
-    
+
 }
 
 div.col-direita2{
     float:right;
     width: 70%;
-    height: 60%;
-    
+    height: 90  %;
+
 }
 
 a.medium-button{
@@ -426,8 +427,8 @@ a.medium-button{
     color: white;
     font-size: 15px;
     padding: 15px;
-   -webkit-border-radius: 15px;
-   display:block;
+    -webkit-border-radius: 15px;
+    display:block;
 }
 a.medium-button2{
     text-decoration: none;
@@ -435,21 +436,21 @@ a.medium-button2{
     color: white;
     font-size: 15px;
     padding: 15px;
-   -webkit-border-radius: 15px;
-   display:inline;
+    -webkit-border-radius: 15px;
+    display:inline;
 }
 
 a.medium-button:hover{
     text-decoration: none;
     background: #339900;
     padding: 15px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 a.medium-button2:hover{
     text-decoration: none;
     background: #339900;
     padding: 15px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 div titulo{
@@ -490,14 +491,14 @@ a.small-button{
     color: white;
     font-size: 10px;
     padding: 5px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 a.small-button:hover{
     text-decoration: none;
     background: #339900;
     padding: 5px;
-   -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 div.justificativa{
@@ -522,4 +523,33 @@ div.radio{
     height: 80px;
     /*font-size: 14px;*/
     /*text-align: center;*/
+}
+
+#div-1 {
+    
+}
+#div-1a {
+    float: left;
+    width: 47%;
+    padding:10px;
+    padding-right: 15px;
+    padding-top: 0;
+    /*border-right: solid 1px lightgray;*/
+    height: 30%;
+}
+
+#div-1b {
+    float:right;
+    width: 47%;
+    height: 30%;
+}
+
+#table_button{
+    position: relative;
+}
+
+#ins_desc{
+    float:right;
+    position: relative;
+    
 }
