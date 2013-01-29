@@ -10,7 +10,8 @@ function verifica(id,string,regex){
             document.getElementById(id).style.color = "red";
             return false;
         }
-    }   
+    }
+    return false;
 }
 
 
@@ -36,7 +37,7 @@ function validaNomeProjeto(id,nome){
 
 function validaDescProjeto(id,nome){
     
-    var regex = /^[A-Za-zÀ-ú0-9 \-]+$/;
+    var regex = /^[A-Za-zÀ-ú0-9 \-(),;.]+$/;
     return verifica(id,nome,regex);
 }
 

@@ -4,7 +4,6 @@ include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
 ?>
-<scrip>addLoadEvent(prepareInputsForHints);</scrip>
 <div class="conteudo">
 
     <div class="col-esquerda2">
@@ -50,7 +49,7 @@ $idu = $_SESSION["idu"];
         }
         echo "<option>Outra...</option>";
         echo "</select>";
-        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' />";
+        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' onclick=\"addTec();\"/>";
         echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/><br>";
         echo "<div id=\"div-1b\"";
         echo "<br /><br /><label><label>Descrição da Tecnologia<br /></label>";
@@ -64,28 +63,23 @@ $idu = $_SESSION["idu"];
             <option>tecnologia 2</option>
             <option>tecnologia 3</option>
         </select>
-        <input name = \"ins_desc\" id = \"ins_desc\" type = \"button\" value=Remover><br>";
+        <input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec();\"><br>";
         echo"</div>";
-        ?>   
-        <table id="table_button">
-            <tr>
-                <td class="button"><input value="add" type="button" onclick="addTec();"</td>
-                <td class="button"><input value="rem" type="button" onclick="remTec();"</td>
-                <td class="button"></td>
+        ?>  
+    <table id="table_button">
+            <tr><br><br>
                 <td>
                     <?php
                     $botao = "Iniciar questionario";
                     $js_onclick = "iniciaQuest();";
-                    echo "<br><br><br><input class = \"button_prox\" name = \"next\" type = \"button\" 
+                    echo "<br><br><br><input class = \"button_prox\" name = \"next\" id=\"next\" type = \"button\" 
                        value = \"" . $botao . "\" onclick=\"" . $js_onclick . "\"/>";
                     ?>
                 </td>
             </tr>
         </table>
-        <select id="lista_tecnologia">
-            
-        </select>
     </div>
+        
     <div id="ajuda">
         
     </div>

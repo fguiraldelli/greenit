@@ -545,11 +545,17 @@ div.radio{
 }
 
 #table_button{
+    float: bottom;
     position: relative;
 }
 
 #ins_desc{
     float:right;
     position: relative;
+    
+}
+
+#next{
+    margin: auto;
     
 }
