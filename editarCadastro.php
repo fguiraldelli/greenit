@@ -1,8 +1,8 @@
 <?php
 
-$empresa = $_POST["empresa"];
-$email = $_POST["email"];
-$senha = md5($_POST["senha"]);
+$campo = $_POST["campo"];
+$op = $_POST["op"];
+
 
 include ("sessao.php");
 include("connection.php");
@@ -15,18 +15,32 @@ $linhas = mysql_num_rows($result);
 
   if (!$linhas) {
       //altera os dados no banco
-      $query = "UPDATE usuario
-      SET empresa = '". $empresa ."',  email = '".$email."',  senha = '".$senha."'
-      WHERE id = '".$idu."'";
+      if($op == 'emp'){
+        $query = "UPDATE usuario
+        SET empresa = '". $campo ."'
+        WHERE id = '".$idu."'";
 
-      mysql_query($query);
+        mysql_query($query);
 
-      echo "Seu cadastro foi Alterado com sucesso!<br />";
-      //echo "<a href=" . "index.php?r=inicio" . ">Voltar</a>";
-      include("inicio.php");
+      }else if($op == 'mail'){
+        $query = "UPDATE usuario
+        SET email = '". $campo ."'
+        WHERE id = '".$idu."'";
+
+        mysql_query($query);
+
+      }else {
+        $query = "UPDATE usuario
+        SET senha = '". md5($campo) ."'
+        WHERE id = '".$idu."'";
+
+        mysql_query($query);
+      }
+      echo "Seu cadastro foi Alterado com sucesso!<br /><a href=\"index.php?r=inicio\">Voltar</a>";
+
   }
   else{
       echo "<font color=red><strong>Erro: Usuário já existe, tente outro e-mail</strong></font><br />";
-      include("inicio.php");
+	  echo "<a href=\"index.php?r=editForm\">Voltar</a>";
   }
 ?>

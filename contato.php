@@ -1,7 +1,7 @@
 <div class="breadcrumbs">
     <a href="index.php">Início</a> >> <span>Contato</span>
 </div>
-
+<br /><br />
 <form  name="contato" method="post" action="controleContato.php">
     <label class="cadastro">Nome <span class="style1">*</span></label><br>
     <input name="nome" type="text" id="nome" size="70" maxlength="60"/>
