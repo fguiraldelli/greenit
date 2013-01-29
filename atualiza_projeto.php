@@ -28,9 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //die();
     if($tipo == 0){
     $url = "Location: index.php?r=tabela";
-    }else{
+    }else if(tipo == 1){
     $url = "Location: index.php?r=form&q=1";
-    }
+    }else{
+    $url = "Location: index.php?r=detalhes_projeto";    
+    } 
     header($url);
     
 }

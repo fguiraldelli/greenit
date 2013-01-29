@@ -2,7 +2,7 @@
 include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
-$idp = $_GET["idp"];
+$idp = $_SESSION["idp"];
 ?>
 
 <div class="conteudo">
