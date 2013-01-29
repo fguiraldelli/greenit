@@ -9,6 +9,8 @@ if ($_SESSION["AUTH"] == false) {
 if (time() - $_SESSION['TIME'] > 1800) {
     session_destroy();
     session_unset();
+}else{
+    $_SESSION['TIME'] = time();
 }
 /*
   if (!isset($_SESSION['TIME'])) {
