@@ -417,7 +417,7 @@ div.col-meio{
 div.col-direita2{
     float:right;
     width: 70%;
-    height: 90  %;
+    height: 80%;
 
 }
 
@@ -547,6 +547,7 @@ div.radio{
 #table_button{
     float: bottom;
     position: relative;
+	top:30px;
 }
 
 #ins_desc{
