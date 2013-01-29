@@ -36,12 +36,11 @@ $linhas = mysql_num_rows($result);
 
         mysql_query($query);
       }
-      include("inicio.php");
-      echo "Seu cadastro foi Alterado com sucesso!<br />";
+      echo "Seu cadastro foi Alterado com sucesso!<br /><a href=\"index.php?r=inicio\">Voltar</a>";
 
   }
   else{
       echo "<font color=red><strong>Erro: Usuário já existe, tente outro e-mail</strong></font><br />";
-      include("inicio.php");
+	  echo "<a href=\"index.php?r=editForm\">Voltar</a>";
   }
 ?>
