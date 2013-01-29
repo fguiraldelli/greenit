@@ -46,7 +46,7 @@ if ($q > 0) {
 
 
     if ($q == 0) {
-        include("descProjeto.php");
+        include("novoProjeto.php");
     } else {
 
         while ($row = mysql_fetch_array($res)) {

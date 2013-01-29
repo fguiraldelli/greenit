@@ -202,9 +202,23 @@ function addTec(){
     }
     lista = document.getElementById("lista_tecnologia").options;
     lista[lista.length] = new Option (newTec, lista.length, true, true);
+    document.getElementById("nome-tec").value = "";
 }
 
 function remTec(){
     lista = document.getElementById("lista_tecnologia");
     lista.remove(lista.options.selectedIndex);
+}
+
+function hideText(){
+    lista = document.getElementById("other");
+    //outra = lista.options.length - 1;
+    
+    if (lista.options.selectedIndex == 0){
+        document.getElementById("nome-tec").style.visibility = 'visible';
+    }
+    else{
+        document.getElementById("nome-tec").style.visibility = 'hidden';
+        document.getElementById("nome-tec").value = "";
+    }
 }
