@@ -44,13 +44,13 @@ $idp = $_GET["idp"];
         //echo "Autor: " . $usuario['nome'] . "<br />";
         echo "Criado em: " . $proj['data'] . "<br />";
         echo "Descrição: " . $proj['descr'] . "<br /><br />";
-        echo "<td class=\"button\"><a href\"#\" 
+        echo "<a href\"#\" 
                     onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 0);\"
-                    class=\"small-button\"> Ver Matriz </a></td>";
-        echo "<td><a href\"#\" 
+                    class=\"small-button\"> Ver Matriz </a> ";
+        echo " <a href\"#\" 
                     onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 1);\"
                     class=\"small-button\">
-                    Editar Avaliação </a></td>";
+                    Editar Avaliação </a>";
         ?>
     </div>
 </div>

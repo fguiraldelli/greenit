@@ -3,14 +3,18 @@ if ($q > 0)
     include("cabecalho.php");
 ?>
 
-<div class="breadcrumbs-form">
-    <a href="index.php">Início</a> >> <span>Avaliação</span>
-</div>
+<?php
+$q = (isset($_GET['q'])) ? $_GET['q'] : 0;
+if ($q > 0) {
+    echo "<div class=\"breadcrumbs-form\">";
+    echo "<a href=\"index.php\">Início</a> >> <span>Avaliação</span>";
+    echo "</div>";
+}
+?>
 <div class="conteudo-form">
 
     <?php
     include("connection.php");
-    $q = (isset($_GET['q'])) ? $_GET['q'] : 0;
 
     /* Recupera a questao */
     if (!isset($q) || ($q < 0))
