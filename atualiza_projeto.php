@@ -30,8 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $url = "Location: index.php?r=tabela";
     }else if($tipo == 1){
     $url = "Location: index.php?r=form&q=1";
-    }else{
+    }else if ($tipo == 2){
     $url = "Location: index.php?r=detalhes_projeto";    
+    }else if ($tipo == 3){
+    $url = "Location: index.php?r=tec";    
     }
     header($url);
     

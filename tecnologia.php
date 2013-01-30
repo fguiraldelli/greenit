@@ -27,7 +27,8 @@ $titulo = $_SESSION["titulopj"];
 
 
         <?php
-        echo "<div class=\"question-form\"><h1>" . $titulo . "</h1></div>";
+        echo "<div id=\"titulo\" class=\"question-form\"><h1>" . 
+                $titulo . "</h1></div><br>";
         /* Abre o formulario */
 
 

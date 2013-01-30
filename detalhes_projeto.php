@@ -35,9 +35,14 @@ $proj = mysql_fetch_array($res);
 
         if ($idu == $idup) {
             echo " <a href\"#\" 
+                    onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 3);\"
+                    class=\"medium-button\">
+                    Editar Tecnologias </a><br />";
+            echo " <a href\"#\" 
                     onclick=\"loadMatrix('" . $proj['idp'] . "','" . $proj['titulo'] . "', 1);\"
                     class=\"medium-button\">
                     Editar Avaliação </a><br />";
+            
         }
         ?>
         <a href="index.php?r=pesquisa_projeto" class="medium-button">
@@ -84,21 +89,21 @@ $proj = mysql_fetch_array($res);
         $tecnologias = mysql_query($sql_tec);
 
 
-        echo "<div id=\"div-1b\"";
+        echo "<div id=\"div-1b2\"";
         echo "<br /><br /><label><label>Descrição da Tecnologia ";
         echo "<br /></label>";
-        echo "<textarea id='descr-tec' cols=31 rows=8></textarea>";
-        echo "<input name = \"ins_desc\" id = \"ins_desc\" type = \"button\" value=Salvar><br>";
+        echo "<textarea id='descr-tec' cols=31 rows=8 disabled></textarea>";
+        //echo "<input name = \"ins_desc\" id = \"ins_desc\" type = \"button\" value=Salvar><br>";
         echo"</div>";
         echo "<div id = \"div-1a\">";
         echo "<br /><label>Tecnologias Utilizadas<br /></label>";
-        echo "<select name=\"lista_tecnologia\" id=\"lista_tecnologia\" 
+        echo "<select name=\"lista_tecnologia\" id=\"lista_tecnologia\"
             size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">";
         while ($row = mysql_fetch_array($tecnologias)) {
             echo "<option>" . $row['nome'] . "</option>";
         }
-        echo"</select>
-        <input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec();\"><br>";
+        echo"</select>";
+        //<input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec();\"><br>";
         echo"</div>";
 
 

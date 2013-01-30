@@ -534,12 +534,19 @@ div.radio{
     width: 47%;
     padding:10px;
     padding-right: 15px;
-    padding-top: 0;
+    padding-top: 25px;
     /*border-right: solid 1px lightgray;*/
     height: 30%;
 }
 
 #div-1b {
+    float:right;
+    width: 47%;
+    height: 30%;
+    padding-top: 50px;
+}
+
+#div-1b2 {
     float:right;
     width: 47%;
     height: 30%;
@@ -560,6 +567,7 @@ div.radio{
 }
 
 #next{
+    margin-top: -20px;
     margin-left: 150px;
     font-weight: bold;
     
@@ -571,4 +579,9 @@ div.radio{
 
 #botao_detalhe{
     display: inline-table;
+}
+#titulo{
+    margin-top: 0px;
+    margin-bottom: 50px;
+    
 }

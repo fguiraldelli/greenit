@@ -277,3 +277,13 @@ function adicionaTecnologia(){
         return false; 
     }
 }
+
+function insereTecnologia(projeto, nomeProjeto, tipo){
+    //alert(projeto + nomeProjeto + tipo);
+    document.getElementById('nome-proj').value = nomeProjeto;
+    document.getElementById('projeto').value = projeto;
+    document.getElementById('tipo').value = tipo;
+    document.getElementById("form3").action = "novo_projeto.php";
+    document.getElementById("form3").submit();
+    return false;        
+}
