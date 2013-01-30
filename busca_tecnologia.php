@@ -3,6 +3,10 @@
 include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
+if($_SESSION["busca_proj"]== ""){
+    $_SESSION["busca_proj"] = (isset($_GET['b'])) ? $_GET['b'] : "";
+}
+$pagina = (isset($_GET['pag'])) ? $_GET['pag'] : 0;
 ?>
 
 <div class="conteudo">
@@ -70,11 +74,39 @@ $idu = $_SESSION["idu"];
             echo $_SESSION["busca_proj"];
             echo " retornou '$total' resultados.";
         }
+        /* Inicio Paginação */
+
+            $total_reg = "10"; // número de registros por página
+ 
+            //Se a página não for especificada a variável "pagina" tomará o 
+            //valor 1, isso evita de exibir a página 0 de início:
+
+            if (!$pagina) {
+                $pc = "1";
+            } else {
+                $pc = $pagina;
+            }
+
+            //Vamos determinar o valor inicial das buscas limitadas:
+
+            $inicio = $pc - 1;
+            $inicio = $inicio * $total_reg;
+
+            //Vamos selecionar os dados e exibir a paginação:
+
+            $limite = mysql_query("$qr LIMIT $inicio,$total_reg");
+            $todos = mysql_query("$qr");
+
+            $tr = mysql_num_rows($todos); // verifica o número total de registros
+            //print "tr: ".$tr."<br>";
+            $tp = $tr / $total_reg; // verifica o número total de páginas
+            //print "tp: ".$tp."<br>";
+            // vamos criar a visualização
         ?>
 
         <table class="projeto">
             <?php
-            while ($row = mysql_fetch_array($sql)) {
+            while ($row = mysql_fetch_array($limite)) {
                 echo "<tr>";
                 echo "<td class=\"proj\">" . $row['titulo'] . "</td> ";
                 echo "<td class=\"button\"><a href\"#\" 
@@ -89,9 +121,25 @@ $idu = $_SESSION["idu"];
                     Editar Avaliação </a></td>";
                 echo "</tr>";
             }
+            $b = $_SESSION["busca_proj"];
             $_SESSION["busca_proj"] = '';
             ?>
         </table>
         <br /><br />
+         <?php
+        // agora vamos criar os botões "Anterior e próximo"
+            $anterior = $pc - 1;
+            $proximo = $pc + 1;
+            if ($pc > 1) {
+                echo " <a id=\"b_ant\" class=\"small-button\" 
+                    href='index.php?r=pesquisa_tecnologia&b=".$b."&pag="
+                .$anterior."'><- Anterior</a> ";
+            }
+            echo " ";
+            if ($pc < $tp) {
+                echo " <a id=\"b_prox\" class=\"small-button\" 
+                    href='index.php?r=pesquisa_tecnologia&b=".$b."&pag="
+                .$proximo."'>Próxima -></a>";
+            } ?>
     </div>
 </div>

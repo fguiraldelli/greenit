@@ -585,3 +585,20 @@ div.radio{
     margin-bottom: 50px;
     
 }
+#b_ant{
+    margin-right: 0px;
+    margin-left: 150px;
+    display: inline-block;
+    position: absolute;
+}
+
+#b_prox{
+    margin-right: 0px;
+    margin-left: 400px;
+    display: inline-block;
+    position: absolute;
+}
+
+#formbusca{
+    margin-top: -10px;
+}
