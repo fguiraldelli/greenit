@@ -57,7 +57,19 @@ $idp = $_SESSION["idp"];
         echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=10
                 disabled>" . $proj['descr'] . "</textarea><br>";
         
-        $sql_tec = "select * from tecnologia";
+        
+        //Recupera as tecnologias
+        $sql_tec = "SELECT t.id, t.nome FROM `tecnologia` t, `proj-tec` pt WHERE pt.idp=" .
+                $idp . " AND pt.idt = t.id";
+        // Se nao for o dono do projeto nao recupera as confidencias
+        $res_idup = mysql_query("SELECT idu FROM `projeto` WHERE idp=" . $idp);
+        $row_idup = mysql_fetch_array($res_idup);
+        $idup = $row_idup["idu"];
+        
+        if($idu != $idup){
+            $sql_tec = $sql_tec + " AND pt.confidencial=0";
+        }
+        
         $tecnologias = mysql_query($sql_tec);
         
         echo "<div id=\"div-1b\"";
