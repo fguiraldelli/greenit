@@ -45,7 +45,7 @@ $titulo = $_SESSION["titulopj"];
             echo "<option>" . $row['nome'] . "</option>";
         }
         echo "</select>";
-        echo "<input type = \"checkbox\" id = \"tec-conf \"name = \"tec-conf\" 
+        echo "<input type = \"checkbox\" id = \"tec-conf\" name = \"tec-conf\" 
                 value = \"\" />Confidencial";
 
         echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/><br>";
@@ -54,12 +54,14 @@ $titulo = $_SESSION["titulopj"];
         echo "<br /><br /><label><label>Descrição da Tecnologia ";
         echo "<br /></label>";
         echo "<textarea id='descr-tec' cols=31 rows=8></textarea>";
-        echo "<input name = \"ins_desc\" id = \"ins_desc\" type = \"button\" value=Salvar><br>";
+        echo "<input name = \"ins_desc\" id = \"ins_desc\" type = \"button\" value=Salvar
+             onclick=\"preparaTec(" . $idp . ")\" /><br>";
         echo"</div>";
         echo "<div id = \"div-1a\">";
         echo "<br /><label>Tecnologias Utilizadas<br /></label>";
         echo "<select name=\"lista_tecnologia\" id=\"lista_tecnologia\" 
-            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">";
+            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\"
+             onchange=\"exibeComentario(" . $idp . ")\">";
         //recarrega as tecnologias que ja foram adicionadas
         $sql_tec = "SELECT t.id, t.nome FROM `tecnologia` t, `proj-tec` pt WHERE pt.idp=" .
                 $idp . " AND pt.idt = t.id";

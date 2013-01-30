@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 $idp=$_POST["idp"];
 $tec=$_POST["tec"];
 $conf=$_POST["conf"];
-$comentario=$_POST["comentario"];
+$comentario = addslashes($_POST["comentario"]);
 
 $resu = mysql_query("SELECT id FROM `tecnologia` WHERE `nome` = '" . $tec . "'");
 $rowidt = mysql_fetch_array($resu);
@@ -17,9 +17,9 @@ $res=  mysql_query("SELECT * FROM `proj-tec` WHERE idp=" . $idp .
         " AND idt=" . $idt);
 
 if(mysql_num_rows($res)){
-    $sql = "UPDATE `proj-tec` SET `comentario` = '" . $comentario . 
-                ", `confidencial` = " . $conf .
-                "' WHERE `idp`=" . $idp . " AND `idt`=" . $idt;
+    $sql = "UPDATE `proj-tec` SET `descricao` = '" . $comentario . 
+                "', `confidencial` = " . $conf .
+                " WHERE `idp`=" . $idp . " AND `idt`=" . $idt;
 }else{
     $sql="INSERT INTO `proj-tec` (`idp`, `idt`, `confidencial`) VALUES (" . $idp .
             "," . $idt . "," . $conf . ")";
