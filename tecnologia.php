@@ -59,9 +59,19 @@ $titulo = $_SESSION["titulopj"];
         echo "<div id = \"div-1a\">";
         echo "<br /><label>Tecnologias Utilizadas<br /></label>";
         echo "<select name=\"lista_tecnologia\" id=\"lista_tecnologia\" 
-            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">
-        </select>
-        <input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec();\"><br>";
+            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">";
+        //recarrega as tecnologias que ja foram adicionadas
+        $sql_tec = "SELECT t.id, t.nome FROM `tecnologia` t, `proj-tec` pt WHERE pt.idp=" .
+                $idp . " AND pt.idt = t.id";
+
+        $tecnologias = mysql_query($sql_tec);
+        while ($row = mysql_fetch_array($tecnologias)) {
+            echo "<option>" . $row['nome'] . "</option>";
+        }
+        // Terminou de recuperar as tecnologias adicionadas
+        
+        echo "</select>
+        <input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec(" . $idp . ");\"><br>";
         echo"</div>";
         ?>  
         <table id="table_button">
