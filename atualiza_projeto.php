@@ -25,14 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     
     echo $_SESSION["idp"];
-    //die();
+    print "tipo= ". $tipo."<br>";
     if($tipo == 0){
     $url = "Location: index.php?r=tabela";
-    }else if(tipo == 1){
+    }else if($tipo == 1){
     $url = "Location: index.php?r=form&q=1";
     }else{
     $url = "Location: index.php?r=detalhes_projeto";    
-    } 
+    }
     header($url);
     
 }

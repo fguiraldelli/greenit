@@ -5,12 +5,16 @@
 include ("sessao.php");
 include("connection.php");
 $idp = $_SESSION["idp"];
+$idu = $_SESSION["idu"];
 $data = date("Y-m-d");
 $sql = "SELECT * FROM matriz";
 $sql2 = "SELECT * FROM respostas WHERE idp = " . $idp /* . " AND data = '" . $data . "'" */;
 $result_user = mysql_query($sql2);
 $data_user = mysql_fetch_array($result_user);
 $result = mysql_query($sql);
+$res_idup = mysql_query("SELECT idu FROM `projeto` WHERE idp=" . $idp);
+$row_idup = mysql_fetch_array($res_idup);
+$idup = $row_idup["idu"];
 echo "<table class ='resultado'>";
 
 // cria 2 colunas vazias
@@ -65,11 +69,18 @@ while ($i < $linhas) {
                     <span> <strong> Aspecto do Negócio:</strong><br /> " . mysql_result($result_user, $j, 3) . " <br /><br />
                             <strong> Aspecto de sustentabilidade:</strong><br /> " . mysql_result($result_user, $i, 3) .
                 "<br /><br /><strong> Comentário:</strong><br /><textarea id=" . $i . "c" . $j .
-                " rows=3; cols=20;>" . $coment . "</textarea>" .
-                "<input type=\"button\" value=\"Salvar\" 
+                " rows=3; cols=20;";
+        if ($idu != $idup){
+           echo " disabled ";
+        }
+        echo ">" . $coment . "</textarea>" ;
+        if ($idu == $idup){
+            print "<input type=\"button\" value=\"Salvar\" 
                                 onclick=\"salvaComentario(" . $idp .
-                "," . $j . "," . $i . ",'" . $i . "c" . $j . "');\" \>" .
-                "</span> </td>";
+                "," . $j . "," . $i . ",'" . $i . "c" . $j . "');\" \>";
+        }
+                
+                print "</span> </td>";
     }
     echo "</tr>";
     $i++;

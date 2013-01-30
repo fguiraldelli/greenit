@@ -131,6 +131,7 @@ function iniciaQuest(){
     }
 }
 function loadMatrix(projeto, nomeProjeto, tipo){
+    //alert(projeto + nomeProjeto + tipo);
     document.getElementById('nome-proj').value = nomeProjeto;
     document.getElementById('projeto').value = projeto;
     document.getElementById('tipo').value = tipo;
@@ -173,7 +174,7 @@ function ajax(){
         if (xmlhttp.readyState==4 && xmlhttp.status==200){
             //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
             teste=xmlhttp.responseText;
-            alert("Teste: " + teste);
+            //alert("Teste: " + teste);
             return teste;
         }
     }
@@ -191,12 +192,21 @@ function salvaComentario(idp, x, y, str){
     "&idqn=" + x +
     "&idqs=" + y +
     "&comentario=" + coment;
-    alert(coment);
+    /*if (confirm('Você deseja salvar o comentário?')) {
+        xmlhttp.open("POST","salva_comentario.php",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send(url);
+        alert("Comentário salvo com sucesso!!!");
+        return true;
+    }else{
+        
+        
+    }*/
     xmlhttp.open("POST","salva_comentario.php",true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(url);
-    alert("completei");
-    return false;
+    alert("Comentário salvo com sucesso!!!");
+    return true;
 }
 
 function adicionaTec(tec){
@@ -246,19 +256,19 @@ function hideText(){
 
 // AJAX para salvar as tecnologias de um projeto
 function salvaTec(idp, tec, conf, str){
-    alert(idp + tec + conf + str);
+    //alert(idp + tec + conf + str);
 
     url = "idp=" + idp +
     "&tec=" + tec +
     "&conf=" + conf +
     "&comentario=" + str;
     
-    alert(url);
+    //alert(url);
     ajax();
     
     xmlhttp.open("POST","salva_tecnologia.php",true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(url);
-    alert("completei");
+    //alert("completei");
     return false;
 }
