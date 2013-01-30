@@ -224,7 +224,7 @@ function addTec(idp){
         newTec = document.getElementById("nome-tec").value;
         adicionaTec(newTec);
     }else{
-        newTec = combo;
+        newTec = combo.value;
     }
     lista = document.getElementById("lista_tecnologia").options;
     lista[lista.length] = new Option (newTec, lista.length, true, true);

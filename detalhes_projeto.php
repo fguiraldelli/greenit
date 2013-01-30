@@ -78,7 +78,7 @@ $proj = mysql_fetch_array($res);
 
 
         if ($idu != $idup) {
-            $sql_tec = $sql_tec + " AND pt.confidencial=0";
+            $sql_tec = $sql_tec . " AND pt.confidencial=0";
         }
 
         $tecnologias = mysql_query($sql_tec);
