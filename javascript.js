@@ -164,7 +164,7 @@ function ajax(){
         if (xmlhttp.readyState==4 && xmlhttp.status==200){
             //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
             teste=xmlhttp.responseText;
-            //alert("Teste: " + teste);
+            alert("Teste: " + teste);
             return teste;
         }
     }
@@ -226,8 +226,13 @@ function addTec(idp){
     salvaTec(idp, newTec, 1, "");
 }
 
-function remTec(){
+function remTec(idp){
     lista = document.getElementById("lista_tecnologia");
+    alert(lista.options[lista.options.selectedIndex].text);
+    tec = lista.options[lista.options.selectedIndex].text;
+    alert(idp + tec);
+    remTecBanco(idp, tec);
+    alert("removi ssaporra");
     lista.remove(lista.options.selectedIndex);
 }
 
@@ -276,4 +281,19 @@ function adicionaTecnologia(){
         document.getElementById("form2").submit();
         return false; 
     }
+}
+function remTecBanco(idp, tec){
+    //alert(idp + tec + conf + str);
+
+    url = "idp=" + idp +
+    "&tec=" + tec;
+    alert(url);
+    ajax();
+    
+    xmlhttp.open("POST","remove_tecnologia.php",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(url);
+    //alert("completei");
+    return false;
+    
 }
