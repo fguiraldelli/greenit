@@ -41,7 +41,7 @@ $idp = $_SESSION["idp"];
         echo "<br /><br /><label>Descrição do Projeto <span class=\"style1\">*</span></label><br>";
         echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=6
                 onkeyup=\"validaDescProjeto(this.id,this.value)\"></textarea>";
-
+        /*
         $sql_tec = "select * from tecnologia";
         $tecnologias = mysql_query($sql_tec);
 
@@ -69,16 +69,16 @@ $idp = $_SESSION["idp"];
             size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">
         </select>
         <input name = \"rem_desc\" id = \"ins_desc\" type = \"button\" value=Remover onclick=\"remTec();\"><br>";
-        echo"</div>";
-        ?>  
-        <table id="table_button">
+        echo"</div>";*/
+        ?> 
+        <table id="table_button2">
             <tr><br><br>
             <td>
                 <?php
                 $botao = "Continuar >>";
                 $js_onclick = "adicionaTecnologia();";
                 echo "<br><br><br><input class = \"button_prox\" name = \"next\" 
-                    id=\"next\" type = \"button\" 
+                    id=\"nexti\" type = \"button\" 
                        value = \"" . $botao . "\" onclick=\"" . $js_onclick . "\"/>";
                 ?>
             </td>

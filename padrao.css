@@ -418,7 +418,7 @@ div.col-meio{
 div.col-direita2{
     float:right;
     width: 70%;
-    height: 80%;
+    height: 50%;
 
 }
 
@@ -527,7 +527,7 @@ div.radio{
 }
 
 #div-1 {
-    
+
 }
 #div-1a {
     float: left;
@@ -556,25 +556,42 @@ div.radio{
 #table_button{
     float: bottom;
     position: relative;
-	top:30px;
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
+#table_button2{
+    float: bottom;
+    position: relative;
+    margin-top: 50px;
+    margin-left: -100px;
 }
 
 #ins_desc{
     float:right;
     position: relative;
     margin-right: 45px;
-    
+
 }
 
 #next{
-    margin-top: -20px;
-    margin-left: 150px;
+    margin-top: -70px;
+    margin-left: 400px;
     font-weight: bold;
+
+}
+#nexti{
+    margin-top: -70px;
+    margin-left: 500px;
+    font-weight: bold;
+    position: absolute;
     
+
 }
 
 #form2{
     margin-top: -30px;
+    height: 300px;
 }
 
 #botao_detalhe{
@@ -583,7 +600,7 @@ div.radio{
 #titulo{
     margin-top: 0px;
     margin-bottom: 50px;
-    
+
 }
 #b_ant{
     margin-right: 0px;
