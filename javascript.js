@@ -215,10 +215,10 @@ function hideText(){
     //outra = lista.options.length - 1;
     
     if (lista.options.selectedIndex == 0){
-        document.getElementById("nome-tec").style.visibility = 'visible';
+        document.getElementById("nome-tec").disabled = false;
     }
     else{
-        document.getElementById("nome-tec").style.visibility = 'hidden';
+        document.getElementById("nome-tec").disabled = true;
         document.getElementById("nome-tec").value = "";
     }
 }

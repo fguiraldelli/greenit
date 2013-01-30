@@ -45,9 +45,9 @@ if ($q > 0) {
 
 
 
-    if ($q == 0) {
-        include("novoProjeto.php");
-    } else {
+    //if ($q == 0) {
+        //include("novoProjeto.php");
+    //} else {
 
         while ($row = mysql_fetch_array($res)) {
 
@@ -113,7 +113,7 @@ if ($q > 0) {
             <label>Se quiser justifique abaixo a sua resposta:</label><br>
             <textarea name="just"  id="mensagem" cols="60" rows="8" maxlength="700"><?php echo $resp[3]; ?></textarea>
         </p>
-    <?php } //fim if   ?>
+    <?php //} //fim if   ?>
 
     <table>
         <tr>

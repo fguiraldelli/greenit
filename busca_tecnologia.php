@@ -43,7 +43,7 @@ $idu = $_SESSION["idu"];
             echo "<input type=hidden name=\"nome-proj\" id=\"nome-proj\" />";
             echo "<input type=hidden name=\"tipo\" id=\"tipo\" />";
             echo "<input type=hidden name=projeto id=projeto />";
-
+        
 
         /* Altera os espaços adicionando no lugar o simbolo % */
         //echo $_SESSION["busca_proj"];

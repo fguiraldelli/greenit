@@ -399,6 +399,7 @@ div.col-esquerda2{
     padding-top: 0;
     border-right: solid 1px lightgray;
     height: 90%;
+    /*padding-bottom: 200px;*/
 }
 
 div.col-esquerda2 p.texto, div.col-direita2 p.texto {
@@ -542,6 +543,7 @@ div.radio{
     float:right;
     width: 47%;
     height: 30%;
+    padding-top: 25px;
 }
 
 #table_button{
@@ -553,10 +555,20 @@ div.radio{
 #ins_desc{
     float:right;
     position: relative;
+    margin-right: 45px;
     
 }
 
 #next{
-    margin: auto;
+    margin-left: 150px;
+    font-weight: bold;
     
+}
+
+#form2{
+    margin-top: -30px;
+}
+
+#botao_detalhe{
+    display: inline-table;
 }

@@ -14,7 +14,7 @@ $idu = $_SESSION["idu"];
 
         <p class="titulo"> Opções </p>
         <br />
-        <a href="index.php?r=form" class="medium-button">
+        <a href="index.php?r=nproj" class="medium-button">
             Adicionar Novo Projeto </a>
         <br />
         <a href="index.php?r=pesquisa_projeto" class="medium-button">
