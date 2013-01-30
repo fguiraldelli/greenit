@@ -53,9 +53,11 @@ $idu = $_SESSION["idu"];
             $row = mysql_fetch_array($res);
             $idt = $row['id'];
             $qr = "SELECT p.idp, p.titulo FROM `projeto` p, `proj-tec` pt, `tecnologia` t
-                        WHERE t.id =" . $idt . "
+                        WHERE t.id = " . $idt . "
                         AND t.id = pt.idt
-                        AND pt.idp = p.idp";
+                        AND pt.idp = p.idp
+                        AND (p.idu= " . $idu . "
+                         OR (p.idu <> " . $idu . " AND pt.confidencial=0)) ORDER BY p.titulo";
             // Executa a query no Banco de Dados
             $sql = mysql_query($qr);
             // Conta o total ded resultados encontrados
