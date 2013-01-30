@@ -53,6 +53,9 @@
         case "nproj":
             include("novoProjeto.php");
             break;
+        case "tec":
+            include("tecnologia.php");
+            break;
         default : include("inicio.php");
     }
     ?>

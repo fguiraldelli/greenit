@@ -116,19 +116,9 @@ function mudaPagina(retorno, nome){
     }
 }
 function iniciaQuest(){
-    if (!validaNomeProjeto("nome-proj",document.getElementById("nome-proj").value)) {
-        alert("Preencha o nome do Projeto corretamente");
-        return false;
-    }
-    if (!validaDescProjeto("descr-proj",document.getElementById("descr-proj").value)) {
-        alert("Preencha a descrição do projeto corretamente");
-        return false;
-    }
-    else{
-        document.getElementById("form2").action = "novo_projeto.php";
-        document.getElementById("form2").submit();
-        return false; 
-    }
+    document.getElementById("form2").action = "novo_projeto_questionario.php";
+    document.getElementById("form2").submit();
+    return false; 
 }
 function loadMatrix(projeto, nomeProjeto, tipo){
     //alert(projeto + nomeProjeto + tipo);
@@ -224,7 +214,7 @@ function addTec(idp){
         newTec = document.getElementById("nome-tec").value;
         adicionaTec(newTec);
     }else{
-        newTec = combo;
+        newTec = combo.value;
     }
     lista = document.getElementById("lista_tecnologia").options;
     lista[lista.length] = new Option (newTec, lista.length, true, true);
@@ -271,4 +261,19 @@ function salvaTec(idp, tec, conf, str){
     xmlhttp.send(url);
     //alert("completei");
     return false;
+}
+function adicionaTecnologia(){
+    if (!validaNomeProjeto("nome-proj",document.getElementById("nome-proj").value)) {
+        alert("Preencha o nome do Projeto corretamente");
+        return false;
+    }
+    if (!validaDescProjeto("descr-proj",document.getElementById("descr-proj").value)) {
+        alert("Preencha a descrição do projeto corretamente");
+        return false;
+    }
+    else{
+        document.getElementById("form2").action = "novo_projeto.php";
+        document.getElementById("form2").submit();
+        return false; 
+    }
 }

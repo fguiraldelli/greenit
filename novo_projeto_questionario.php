@@ -4,7 +4,7 @@ include('sessao.php');
 include('connection.php');
 
 // Verifica se foi feito uma requisicao
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {/*
     // Recupera o ID do usuario
     $idu = $_SESSION["idu"];
     // Recupera o Titulo do Projeto
@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     echo $_SESSION["idp"];
     
-    
-    $url = "Location: index.php?r=tec";
+    */
+    $url = "Location: index.php?r=form&q=1";
     header($url);
     
 }
