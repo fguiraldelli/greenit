@@ -3,6 +3,7 @@
 include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
+$idp = $_SESSION["idp"];
 ?>
 <div class="conteudo">
     <div class="breadcrumbs">
