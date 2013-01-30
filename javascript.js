@@ -162,12 +162,8 @@ function help(indx){
     document.getElementById("ajuda").innerHTML = helpArray[indx];
 }
 
-/* AJAX par atualização dos comentarios da Matriz*/
-function salvaComentario(idp, x, y, str){
-    x = x + 1;
-    y = y + 1;
-
-    
+// Nucleo AJAX
+function ajax(){
     if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp=new XMLHttpRequest();
     }else{// code for IE6, IE5
@@ -175,11 +171,21 @@ function salvaComentario(idp, x, y, str){
     }
     xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState==4 && xmlhttp.status==200){
-        //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-        teste=xmlhttp.responseText;
-        alert(teste);
+            //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+            teste=xmlhttp.responseText;
+            alert("Teste: " + teste);
+            return teste;
         }
     }
+    
+}
+/* AJAX par atualização dos comentarios da Matriz*/
+function salvaComentario(idp, x, y, str){
+    x = x + 1;
+    y = y + 1;
+
+    ajax();
+
     coment = document.getElementById(str).value;
     url = "idp=" + idp +
     "&idqn=" + x +
@@ -193,16 +199,31 @@ function salvaComentario(idp, x, y, str){
     return false;
 }
 
-function addTec(){
-    combo = document.getElementById("other").value;
-    if (combo == "Outra..."){
+function adicionaTec(tec){
+    url = "tec=" + tec;
+    ajax();
+    xmlhttp.open("POST","adiciona_tec.php",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(url);
+    return false;
+}
+
+function addTec(idp){
+    combo = document.getElementById("other");
+    if (combo.value == "Outra..."){
         newTec = document.getElementById("nome-tec").value;
+        adicionaTec(newTec);
     }else{
         newTec = combo;
     }
     lista = document.getElementById("lista_tecnologia").options;
     lista[lista.length] = new Option (newTec, lista.length, true, true);
     document.getElementById("nome-tec").value = "";
+    
+    //conf = document.getElementById("tec-conf").value;
+    
+    /* AJAX pra salvar no banco */
+    salvaTec(idp, newTec, 1, "");
 }
 
 function remTec(){
@@ -221,4 +242,23 @@ function hideText(){
         document.getElementById("nome-tec").style.visibility = 'hidden';
         document.getElementById("nome-tec").value = "";
     }
+}
+
+// AJAX para salvar as tecnologias de um projeto
+function salvaTec(idp, tec, conf, str){
+    alert(idp + tec + conf + str);
+
+    url = "idp=" + idp +
+    "&tec=" + tec +
+    "&conf=" + conf +
+    "&comentario=" + str;
+    
+    alert(url);
+    ajax();
+    
+    xmlhttp.open("POST","salva_tecnologia.php",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(url);
+    alert("completei");
+    return false;
 }
