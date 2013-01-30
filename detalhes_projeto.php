@@ -98,7 +98,8 @@ $proj = mysql_fetch_array($res);
         echo "<div id = \"div-1a\">";
         echo "<br /><label>Tecnologias Utilizadas<br /></label>";
         echo "<select name=\"lista_tecnologia\" id=\"lista_tecnologia\"
-            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\">";
+            size=\"8\" style=\"width: 267px;\" multiple=\"multiple\"
+             onchange=\"exibeComentario(" . $idp . ")\">";
         while ($row = mysql_fetch_array($tecnologias)) {
             echo "<option>" . $row['nome'] . "</option>";
         }
