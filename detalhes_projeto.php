@@ -51,7 +51,7 @@ $proj = mysql_fetch_array($res);
         <?php
         /* Novo Formulario */
         //echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
-       // echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
+        // echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
         //echo "<input type=hidden name=\"q\" value=" . $q . " />";
 
         echo "<div class = \"question-form\"><p>Detalhes do Projeto</p></div><hr />";
@@ -82,6 +82,7 @@ $proj = mysql_fetch_array($res);
         }
 
         $tecnologias = mysql_query($sql_tec);
+
 
         echo "<div id=\"div-1b\"";
         echo "<br /><br /><label><label>Descrição da Tecnologia ";

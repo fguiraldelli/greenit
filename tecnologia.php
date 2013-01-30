@@ -4,6 +4,7 @@ include ("sessao.php");
 include("connection.php");
 $idu = $_SESSION["idu"];
 $idp = $_SESSION["idp"];
+$titulo = $_SESSION["titulopj"];
 ?>
 <div class="conteudo">
     <div class="breadcrumbs">
@@ -24,27 +25,18 @@ $idp = $_SESSION["idp"];
     </div>
     <div class="col-direita2">
 
-        <?php
-        /* Abre o formulario */
-        echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
-        echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
-        echo "<input type=hidden name=\"q\" value=" . $q . " />";
 
-        echo "<div class = \"question-form\"><p>Avaliação do Projeto</p></div><hr />";
-        echo "<span class=\"style1\">* Campos com * são obrigatórios!</span><br>";
-        echo "<br><label>Nome do Projeto <span class=\"style1\">*</span></label><br>";
-        echo "<input type=text id='nome-proj' name='nome-proj' size=50 maxlength=50 
-            title=\"teste\"
-                onkeyup=\"validaNomeProjeto(this.id,this.value)\"/>";
-        echo "<input type = \"checkbox\" id = \"proj-conf \"name = \"proj-conf\" 
-                value = \"\" />Confidencial";
-        echo "<br /><br /><label>Descrição do Projeto <span class=\"style1\">*</span></label><br>";
-        echo "<textarea id='descr-proj' name='descr-proj' cols=60 rows=6
-                onkeyup=\"validaDescProjeto(this.id,this.value)\"></textarea>";
+        <?php
+        echo "<div class=\"question-form\"><h1>" . $titulo . "</h1></div>";
+        /* Abre o formulario */
+
 
         $sql_tec = "select * from tecnologia";
         $tecnologias = mysql_query($sql_tec);
 
+        echo "<form id = \"form2\" action=\"atualiza_pagina.php\" method=\"POST\">";
+        echo "<input type=hidden name=\"vaiprafrente\" id=\"vaiprafrente\" />";
+        echo "<input type=hidden name=\"q\" value=" . $q . " />";
         echo "<br /><br /><label>Tecnologias<br /></label>";
         echo "<select id=\"other\" onchange=\"hideText();\">";
         echo "<option>Outra...</option>";
@@ -56,7 +48,7 @@ $idp = $_SESSION["idp"];
                 value = \"\" />Confidencial";
 
         echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/><br>";
-        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' onclick=\"addTec(".$idp.");\"/>";
+        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' onclick=\"addTec(" . $idp . ");\"/>";
         echo "<div id=\"div-1b\"";
         echo "<br /><br /><label><label>Descrição da Tecnologia ";
         echo "<br /></label>";
@@ -75,8 +67,8 @@ $idp = $_SESSION["idp"];
             <tr><br><br>
             <td>
                 <?php
-                $botao = "Continuar >>";
-                $js_onclick = "adicionaTecnologia();";
+                $botao = "Iniciar questionario";
+                $js_onclick = "iniciaQuest();";
                 echo "<br><br><br><input class = \"button_prox\" name = \"next\" 
                     id=\"next\" type = \"button\" 
                        value = \"" . $botao . "\" onclick=\"" . $js_onclick . "\"/>";
