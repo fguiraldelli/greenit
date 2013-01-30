@@ -317,7 +317,7 @@ function exibeComentario(idp){
     }
     xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState==4 && xmlhttp.status==200){
-            document.getElementById("descr-tec").innerHTML=xmlhttp.responseText;
+            document.getElementById("descr-tec").value=xmlhttp.responseText;
         }
     }
     // Envio dos dados do AJAX
