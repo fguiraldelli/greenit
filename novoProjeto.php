@@ -56,7 +56,7 @@ $idp = $_SESSION["idp"];
                 value = \"\" />Confidencial";
 
         echo "<br /><input type=text id='nome-tec' size=50 maxlength=50/><br>";
-        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' onclick=\"addTec();\"/>";
+        echo "<input type=button id='add-tec' value='Adicionar Tecnologia' onclick=\"addTec(".$idp.");\"/>";
         echo "<div id=\"div-1b\"";
         echo "<br /><br /><label><label>Descrição da Tecnologia ";
         echo "<br /></label>";
