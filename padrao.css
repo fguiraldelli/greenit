@@ -578,6 +578,7 @@ div.radio{
     margin-top: -70px;
     margin-left: 400px;
     font-weight: bold;
+    position: absolute;
 
 }
 #nexti{
