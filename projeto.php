@@ -83,6 +83,11 @@ $pagina = (isset($_GET['pag'])) ? $_GET['pag'] : 0;
                         $row['titulo'] . "', 1);\"
                              class=\"small-button\">
                              Editar Avaliação </a></td>";
+                echo "<td><a href\"#\" 
+                             onclick=\"loadMatrix('" . $row['idp'] . "','" . 
+                        $row['titulo'] . "', 4);\"
+                             class=\"small-button\">
+                             Remover </a></td>";
                 echo "</tr>";
             }
             /* Fim Paginação */
