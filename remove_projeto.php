@@ -24,11 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_SESSION["titulopj"] = $titulo;
     
     $sql = "delete from `projeto` where idp = " . $idp;
+    $sql2 = "select * from `projeto` where idp = " . $idp;
     $result = mysql_query($sql);
+    $result2 = mysql_query($sql2);
+    $result3 = mysql_fetch_array($result2);
     print "sql: ".$sql."<br>";
+    print "sql2: ".$sql2."<br>";
     echo "idp: ".$_SESSION["idp"]."<br>";
     print "tipo= ". $tipo."<br>";
     print "result= ". $result."<br>";
+    print "result2= ". $result3[2]."<br>";
     $url = "Location: index.php?r=projeto";
     header($url);
     
