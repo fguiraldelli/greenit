@@ -65,6 +65,44 @@ function matchSenha(id,match){
     
 }
 
+function validaRenomearEmpresa(){
+    if (!validaEmpresa("empresa",document.getElementById("empresa").value)) {
+        alert("Preencha o nome da empresa corretamente");
+        return false;
+    }else{
+        document.getElementById("edita_empresa").action = "index.php?r=editcad";
+        document.getElementById("edita_empresa").submit();
+        return true;
+    }
+    return true;
+}
+
+function validaRenomearEmail(){
+    if(!validaEmail("email", document.getElementById("email").value)){
+        alert("Preencha o email corretamente");
+        return false;
+    }else{
+        document.getElementById("edita_email").action = "index.php?r=editcad";
+        document.getElementById("edita_email").submit();
+        return true;
+    }
+    return true
+}
+
+function validaRenomearSenha(){
+    if(!validaSenha("senha", document.getElementById("senha").value)){
+        alert("Preencha uma senha de 7 a 10 caracteres");
+        return false;
+    }else if(!matchSenha("repsenha", document.getElementById("repsenha").value)){
+        alert("Confira se as senhas combinam");
+        return false;
+    }else{
+        document.getElementById("edita_senha").action = "index.php?r=editcad";
+        document.getElementById("edita_senha").submit();
+        return true;
+    }
+    return true;
+}
 
 function validaForm(){
     if (!validaNome("nome",document.getElementById("nome").value)) {
